@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Maximal sum", "02. Maximal sum\02. Maximal sum.csproj", "{84E200F9-737C-4758-BAFA-2875762C0DD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Sequence in matrix", "03. Sequence in matrix\03. Sequence in matrix.csproj", "{0757C891-F158-4BD6-8374-1D554F8F4065}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Largest area in matrix", "06. Largest area in matrix\06. Largest area in matrix.csproj", "{7B7C7B6D-1312-4BBE-8762-5D782065B5BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Bishop Path Finder", "07. Bishop Path Finder\07. Bishop Path Finder.csproj", "{BC175525-C86F-413B-912D-641B00483880}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84E200F9-737C-4758-BAFA-2875762C0DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84E200F9-737C-4758-BAFA-2875762C0DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84E200F9-737C-4758-BAFA-2875762C0DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84E200F9-737C-4758-BAFA-2875762C0DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0757C891-F158-4BD6-8374-1D554F8F4065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0757C891-F158-4BD6-8374-1D554F8F4065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0757C891-F158-4BD6-8374-1D554F8F4065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0757C891-F158-4BD6-8374-1D554F8F4065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B7C7B6D-1312-4BBE-8762-5D782065B5BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B7C7B6D-1312-4BBE-8762-5D782065B5BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B7C7B6D-1312-4BBE-8762-5D782065B5BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B7C7B6D-1312-4BBE-8762-5D782065B5BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC175525-C86F-413B-912D-641B00483880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC175525-C86F-413B-912D-641B00483880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC175525-C86F-413B-912D-641B00483880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC175525-C86F-413B-912D-641B00483880}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
