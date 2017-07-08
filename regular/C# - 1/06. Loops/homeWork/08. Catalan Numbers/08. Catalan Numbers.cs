@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Numerics;
 
-namespace _07.Calculate_3_
+namespace _08.Catalan_Numbers
 {
     class Program
     {
         static void Main(string[] args)
         {
-            BigInteger n, k, resultNK;
+            BigInteger n, resultCatalan;
 
             n = BigInteger.Parse(Console.ReadLine());
-            k = BigInteger.Parse(Console.ReadLine());
 
-            resultNK = CalculateFactorial(n) / (CalculateFactorial(k) * CalculateFactorial(n - k));
+            resultCatalan = CalculateFactorial(2 * n) / (CalculateFactorial(n+1)*CalculateFactorial(n));
 
-            Console.WriteLine(resultNK);
+            Console.WriteLine(resultCatalan);
         }
 
         private static BigInteger CalculateFactorial(BigInteger i)
