@@ -68,7 +68,10 @@ namespace _01.Snake
 
                 // eat food logic
                 EatFoodLogic();
+
                 // generate new food if not eaten after fixed time
+                GenerateFoodIfNotPickedUp();
+
                 // game over logic
 
                 // redraw old head
@@ -77,13 +80,49 @@ namespace _01.Snake
                 // draw new head
                 DrawNewHead();
 
-                // draw food
+                GameOverLogic();
                 // add the new snake head
                 snakeElements.Enqueue(snakeNewHead);
 
 
                 sleepTime -= 0.01;
                 Thread.Sleep((int)sleepTime);
+            }
+        }
+
+        private static void GameOverLogic()
+        {
+            if (snakeElements.Contains(snakeNewHead)
+                || obstacles.Contains(snakeNewHead))
+            {
+                isGameOver = true;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.SetCursorPosition((Console.WindowWidth / 2) - 6, Console.WindowHeight / 2);
+                Console.Write("[_Game-Over_]");
+
+                PrintUserPoints();
+
+            }
+        }
+
+        private static void PrintUserPoints()
+        {
+            userPoints = (snakeElements.Count - 5) * 100 - negativePoints;
+            userPoints = Math.Max(0, userPoints);
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.SetCursorPosition((Console.WindowWidth / 2) - 8, (Console.WindowHeight / 2) + 2);
+            Console.Write("[ Your Points: {0} ]", userPoints);
+        }
+
+        private static void GenerateFoodIfNotPickedUp()
+        {
+            //curent time between last food generation and now > 8 secs
+            if (Environment.TickCount - lastFoodTime >= foodDisappearTime)
+            {
+                Console.SetCursorPosition(food.Col, food.Row);
+                Console.Write(" ");
+                GenerateFood();
+                DrawFood();
             }
         }
 
@@ -103,7 +142,7 @@ namespace _01.Snake
             {
                 Position snakeTail = snakeElements.Dequeue();
                 Console.SetCursorPosition(snakeTail.Col, snakeTail.Row);
-                Console.WriteLine(" ");
+                Console.Write(" ");
             }
         }
 
@@ -111,7 +150,7 @@ namespace _01.Snake
         {
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.SetCursorPosition(obstacle.Col, obstacle.Row);
-            Console.WriteLine("#");
+            Console.Write("#");
         }
 
         private static void DrawNewHead()
@@ -138,6 +177,27 @@ namespace _01.Snake
             snakeNewHead = new Position(snakeNewHead.Row + nextDirection.Row, snakeHead.Col + nextDirection.Col);
 
             // TODO: teleport snake
+            TeleportSnake();
+        }
+
+        private static void TeleportSnake()
+        {
+            if (snakeNewHead.Col<0)
+            {
+                snakeNewHead.Col = Console.WindowWidth - 1;
+            }
+            else if (snakeNewHead.Col >= Console.WindowWidth)
+            {
+                snakeNewHead.Col = 0;
+            }
+            else if (snakeNewHead.Row<0)
+            {
+                snakeNewHead.Row = Console.WindowHeight - 1;
+            }
+            else if (snakeNewHead.Row >= Console.WindowHeight)
+            {
+                snakeNewHead.Row = 0;
+            }
         }
 
         private static void InputHandler()
@@ -225,7 +285,7 @@ namespace _01.Snake
             do
             {
                 food = new Position(rng.Next(0, Console.WindowHeight), rng.Next(0, Console.WindowWidth));
-            } while (snakeElements.Contains(food)||obstacles.Contains(food));
+            } while (snakeElements.Contains(food) || obstacles.Contains(food));
 
             lastFoodTime = Environment.TickCount; //restat apple timer
         }
