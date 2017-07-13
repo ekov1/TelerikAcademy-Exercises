@@ -1,0 +1,11 @@
+ 1. cp biopic/cleopatra.txt historical/
+ 2.
+ 3. To copy a file into a directory, use cp with the source file 
+ 4. as the first argument and the destination directory as the   
+ 5. second argument. Here, we copy the file biopic/cleopatra.txt
+ 6. and place it in the historical/ directory.
+ 7.
+ 8. cp biopic/ray.txt biopic/notorious.txt historical/
+ 9.
+10. To copy multiple files into a directory, use cp with a list 11. of source files as the first arguments, and the destination 12. directory as the last argument. Here, we copy the files 
+13. biopic/ray.txt and biopic/notorious.txt into the historical/ 14. directory.

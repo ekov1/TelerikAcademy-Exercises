@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E2A7B49F-41E6-4888-A37C-C6535E6BB3A0}</ProjectGuid>
+    <ProjectGuid>{A244BBD8-26D9-4785-8567-6898081EA4A4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_14.Integer_calculations</RootNamespace>
-    <AssemblyName>_14.Integer_calculations</AssemblyName>
+    <RootNamespace>MobilePhoneDevice</RootNamespace>
+    <AssemblyName>MobilePhoneDevice</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Battery.cs" />
+    <Compile Include="Display.cs" />
+    <Compile Include="GSM.cs" />
+    <Compile Include="Start.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
