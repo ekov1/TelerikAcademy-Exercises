@@ -21,20 +21,24 @@ namespace MobilePhoneDevice
         // Assume that model and manufacturer are mandatory (the others are optional).
         // All unknown data fill with null.
         #region Constructors
-        public Display(string model, string manufacturer)
+        public Display(string model, string manufacturer, decimal? price)
         {
             this.model = model;
             this.manufacturer = manufacturer;
+            this.price = price;
         }
 
-        public Display(string model, string manufacturer, decimal price)
-            : this(null, null)
+        public Display(string model, string manufacturer)
+            : this(model, manufacturer, null)
         {
-            this.price = price;
         }
         #endregion
 
         #region Properties
+        //Problem 5. Properties
+
+        // Use properties to encapsulate the data fields inside the GSM, Battery and Display classes.
+        // Ensure all fields hold correct data at any given time.
         public string Model
         {
             get
@@ -69,14 +73,17 @@ namespace MobilePhoneDevice
         #endregion
 
         #region Methods    
+        // Problem 4. ToString
 
+        // Add a method in the GSM class for displaying all information about it.
+        // Try to override ToString().
         public override string ToString()
         {
 
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine(string.Format("Model: {0}", this.model));
-            sb.AppendLine(string.Format("Manufacturer: {0}", this.manufacturer));
+            sb.AppendLine(string.Format("Model: {0}", this.Model));
+            sb.AppendLine(string.Format("Manufacturer: {0}", this.Manufacturer));
 
             return sb.ToString();
         }

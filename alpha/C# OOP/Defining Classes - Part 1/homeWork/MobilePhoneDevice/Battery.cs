@@ -22,19 +22,25 @@ namespace MobilePhoneDevice
         // All unknown data fill with null.
 
         #region Constructors
-        public Battery(string model, string manufacturer)
-        {
-            this.model = model;
-            this.manufacturer = manufacturer;
-        }
+
         public Battery(string model, string manufacturer, BatteryTypes? batteryType)
-           : this(null, null)
+
         {
-            this.batteryType = batteryType;
+            this.Model = model;
+            this.Manufacturer = manufacturer;
+            this.BatteryType = batteryType;
+        }
+        public Battery(string model, string manufacturer)
+            : this(model, manufacturer, null)
+        {
         }
         #endregion
 
         #region Properties
+        //Problem 5. Properties
+
+        // Use properties to encapsulate the data fields inside the GSM, Battery and Display classes.
+        // Ensure all fields hold correct data at any given time.
         public string Model
         {
             get
@@ -89,14 +95,18 @@ namespace MobilePhoneDevice
         }
 
         #region Methods    
+        // Problem 4. ToString
 
+        // Add a method in the GSM class for displaying all information about it.
+        // Try to override ToString().
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-           
-            sb.AppendLine(string.Format("Model: {0}", this.model));
-            sb.AppendLine(string.Format("Manufacturer: {0}", this.manufacturer));
-            
+
+            sb.AppendLine(string.Format("Model: {0}", this.Model));
+            sb.AppendLine(string.Format("Manufacturer: {0}", this.Model));
+            sb.AppendLine(string.Format("BatteryType: {0}", this.BatteryType));
+
             return sb.ToString();
         }
         #endregion

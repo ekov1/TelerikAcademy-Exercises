@@ -22,14 +22,22 @@ namespace MobilePhoneDevice
         Battery battery;
         Display display;
 
+
+        // Problem 6. Static field
+
+        // Add a static field and a property IPhone4S in the GSM class to hold the information about iPhone 4S.
+        public static GSM iphone4s = new GSM("Iphone4S", "Apple", 1000, "Steve Jobs",
+            new Battery("appleBat", "appleBat", Battery.BatteryTypes.LiIon), new Display("appleDis", "appleDis"));
+
+
+
+        #region Constructors
         // Problem 2. Constructors
 
         // Define several constructors for the defined classes that take different sets of arguments 
         // (the full information for the class or part of it).
         // Assume that model and manufacturer are mandatory (the others are optional).
         // All unknown data fill with null.
-
-        #region Constructors
         public GSM(string model, string manufacturer, decimal? price, string owner, Battery battery, Display display)
         {
             this.Model = model;
@@ -64,6 +72,10 @@ namespace MobilePhoneDevice
         #endregion
 
         #region Properties
+        //Problem 5. Properties
+
+        // Use properties to encapsulate the data fields inside the GSM, Battery and Display classes.
+        // Ensure all fields hold correct data at any given time.
         public string Model
         {
             get
@@ -154,19 +166,22 @@ namespace MobilePhoneDevice
         #endregion
 
         #region Methods    
+        // Problem 4. ToString
 
+        // Add a method in the GSM class for displaying all information about it.
+        // Try to override ToString().
         public override string ToString()
         {
             Console.ForegroundColor = ConsoleColor.Gray;
             string dash = new string('-', 45);
             StringBuilder sb = new StringBuilder();
-           
+
             sb.AppendLine(dash);
             sb.AppendLine(string.Format("Phone Specs:"));
-            sb.AppendLine(string.Format("Model: {0}", this.model));
-            sb.AppendLine(string.Format("Manufacturer: {0}", this.manufacturer));
-            sb.AppendLine(string.Format("Price: {0} $", this.price));
-            sb.AppendLine(string.Format("Owner: {0}", this.owner));
+            sb.AppendLine(string.Format("Model: {0}", this.Model));
+            sb.AppendLine(string.Format("Manufacturer: {0}", this.Manufacturer));
+            sb.AppendLine(string.Format("Price: {0} $", this.Price));
+            sb.AppendLine(string.Format("Owner: {0}", this.Owner));
             sb.AppendLine();
 
             sb.AppendLine(dash);
