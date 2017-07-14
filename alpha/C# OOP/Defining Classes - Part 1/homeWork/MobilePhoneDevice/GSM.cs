@@ -32,12 +32,12 @@ namespace MobilePhoneDevice
         #region Constructors
         public GSM(string model, string manufacturer, decimal? price, string owner, Battery battery, Display display)
         {
-            this.model = model;
-            this.manufacturer = manufacturer;
-            this.price = price;
-            this.owner = owner;
-            this.battery = battery;
-            this.display = display;
+            this.Model = model;
+            this.Manufacturer = manufacturer;
+            this.Price = price;
+            this.Owner = owner;
+            this.Battery = battery;
+            this.Display = display;
         }
 
         public GSM(string model, string manufacturer)
@@ -61,6 +61,124 @@ namespace MobilePhoneDevice
 
 
 
+        #endregion
+
+        #region Properties
+        public string Model
+        {
+            get
+            {
+                return this.model;
+            }
+            set
+            {
+                if (value.Length < 1)
+                {
+                    throw new Exception("phone model can NOT be an empty string");
+                }
+                this.model = value;
+            }
+        }
+
+        public string Manufacturer
+        {
+            get
+            {
+                return this.manufacturer;
+            }
+            set
+            {
+                if (value.Length < 1)
+                {
+                    throw new Exception("phone manufacturer can NOT be an empty string");
+                }
+                this.manufacturer = value;
+            }
+        }
+
+        public decimal? Price
+        {
+            get
+            {
+                return this.price;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new Exception("phone price can NOT be less than 0");
+                }
+                this.price = value;
+            }
+        }
+
+        public string Owner
+        {
+            get
+            {
+                return this.owner;
+            }
+            set
+            {
+                if (value.Length < 1)
+                {
+                    throw new Exception("phone owner can NOT be an empty string");
+                }
+                this.owner = value;
+            }
+        }
+
+        public Battery Battery
+        {
+            get
+            {
+                return this.battery;
+            }
+            set
+            {
+                this.battery = value;
+            }
+        }
+
+        public Display Display
+        {
+            get
+            {
+                return this.display;
+            }
+            set
+            {
+                this.display = value;
+            }
+        }
+        #endregion
+
+        #region Methods    
+
+        public override string ToString()
+        {
+            Console.ForegroundColor = ConsoleColor.Gray;
+            string dash = new string('-', 45);
+            StringBuilder sb = new StringBuilder();
+           
+            sb.AppendLine(dash);
+            sb.AppendLine(string.Format("Phone Specs:"));
+            sb.AppendLine(string.Format("Model: {0}", this.model));
+            sb.AppendLine(string.Format("Manufacturer: {0}", this.manufacturer));
+            sb.AppendLine(string.Format("Price: {0} $", this.price));
+            sb.AppendLine(string.Format("Owner: {0}", this.owner));
+            sb.AppendLine();
+
+            sb.AppendLine(dash);
+            sb.AppendLine(string.Format("Battery Specs:"));
+            sb.AppendLine(string.Format("{0}", this.battery.ToString()));
+
+            sb.AppendLine(dash);
+            sb.AppendLine("Display Specs:");
+            sb.AppendLine(string.Format("{0}", this.display.ToString()));
+
+            return sb.ToString();
+        }
         #endregion
     }
 }

@@ -20,6 +20,7 @@ namespace MobilePhoneDevice
         // (the full information for the class or part of it).
         // Assume that model and manufacturer are mandatory (the others are optional).
         // All unknown data fill with null.
+        #region Constructors
         public Display(string model, string manufacturer)
         {
             this.model = model;
@@ -31,5 +32,54 @@ namespace MobilePhoneDevice
         {
             this.price = price;
         }
+        #endregion
+
+        #region Properties
+        public string Model
+        {
+            get
+            {
+                return this.model;
+            }
+            set
+            {
+                if (value.Length < 1)
+                {
+                    throw new Exception("display model can NOT be an empty string");
+                }
+                this.model = value;
+            }
+        }
+
+        public string Manufacturer
+        {
+            get
+            {
+                return this.manufacturer;
+            }
+            set
+            {
+                if (value.Length < 1)
+                {
+                    throw new Exception("display manufacturer can NOT be an empty string");
+                }
+                this.manufacturer = value;
+            }
+        }
+        #endregion
+
+        #region Methods    
+
+        public override string ToString()
+        {
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(string.Format("Model: {0}", this.model));
+            sb.AppendLine(string.Format("Manufacturer: {0}", this.manufacturer));
+
+            return sb.ToString();
+        }
+        #endregion
     }
 }
