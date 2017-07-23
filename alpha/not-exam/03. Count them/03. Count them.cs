@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace _03.Count_them
@@ -10,24 +11,39 @@ namespace _03.Count_them
     {
         static void Main(string[] args)
         {
-            int br = 0, index;
-            string temp = "", variable = "";
-            List<int> indx = new List<int>();
+            int counter = 0;
+            string input = "", temp = "";
+            List<string> variables = new List<string>();
+            Regex reg = new Regex("^[a-zA-Z0-9]+$");
 
-            do
+            while (input != "{!}")
             {
-                temp = Console.ReadLine();
+                input = Console.ReadLine();
 
-                if (!temp.Contains("//") && !temp.Contains("/*") && !temp.Contains("*/"))
+                if (!input.Contains("//") && !input.Contains("/*") && !input.Contains("*/"))
                 {
-                    index = temp.IndexOf("@");
+                    for (int i = 0; i < input.Length; i++)
+                    {
+                        if (input[i] == '@')
+                        {
+                            while (input[i] != ' ' || input[i] != '\'' || input[i] != ';' || input[i] != '[')
+                            {
+                                temp += input[i];
+                                i++;
+                            }
+                            temp = temp.Substring(1);
+                            variables[counter] = temp;
+                            counter++;
+                            temp = "";
+                        }
+                    }
                 }
+            }
 
-
-            } while (temp != "{!}");
-
-            Console.WriteLine(4);
-
+            foreach (var v in variables)
+            {
+                Console.WriteLine(v);
+            }
         }
     }
 }
