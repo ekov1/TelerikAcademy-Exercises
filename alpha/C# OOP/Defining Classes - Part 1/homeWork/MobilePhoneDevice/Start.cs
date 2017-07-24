@@ -12,7 +12,11 @@ namespace MobilePhoneDevice
     {
         static void Main(string[] args)
         {
-            gsmTest.GTest();
+            // gsmTest.GTest();
+
+            Call c = new Call("123",100);
+
+            Console.WriteLine(c.ToString());
         }
     }
 }
