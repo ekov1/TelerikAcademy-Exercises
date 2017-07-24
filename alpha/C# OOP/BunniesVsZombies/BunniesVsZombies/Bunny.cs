@@ -26,27 +26,26 @@ namespace BunniesVsZombies
         #region Constructors
         public Bunny(string name, int health, BunnyBreed breed)
         {
+            this.id = GenerateID();
             this.Name = name;
             this.Health = health;
             this.Breed = breed;
+            this.CarrotBullets = new List<Carrot>();
         }
+
+
 
         public Bunny(string name, int health)
-            : this(name, health, BunnyBreed.Wuzzy)
+            : this(name, health, DEFAULT_BREED)
         { }
+
         public Bunny(string name)
-        {
-            this.Name = name;
-            this.Health = 100;
-            this.Breed = BunnyBreed.Wuzzy;
-        }
+            : this(name, DEFAULT_HEALTH, DEFAULT_BREED)
+        { }
 
         public Bunny()
-        {
-            this.Name = "Spas";
-            this.Health = 100;
-            this.Breed = BunnyBreed.Wuzzy;
-        }
+            : this(DEFAULT_NAME, DEFAULT_HEALTH, DEFAULT_BREED)
+        { }
         #endregion
 
         #region Properties
@@ -86,6 +85,13 @@ namespace BunniesVsZombies
 
         public List<Carrot> CarrotBullets { get; private set; }
 
+        #endregion
+
+        #region Methods
+        private string GenerateID()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         internal class Carrot
