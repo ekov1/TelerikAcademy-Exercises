@@ -204,6 +204,23 @@ namespace MobilePhoneDevice
             this.CallHistory.Clear();
         }
 
+        public void RemoveLongestCall()
+        {
+            int indexOfLongestCall = 0;
+            int max = -1;
+
+            for (int i = 0; i < this.CallHistory.Count; i++)
+            {
+                if (this.CallHistory[i].Duration > max)
+                {
+                    max = this.CallHistory[i].Duration;
+                    indexOfLongestCall = i;
+                }
+            }
+
+            this.CallHistory.Remove(this.CallHistory[indexOfLongestCall]);
+        }
+
         // Problem 11. Call price
 
         // Add a method that calculates the total price of the calls in the call history.
@@ -211,7 +228,7 @@ namespace MobilePhoneDevice
 
         public double CalcPriceOfCalls()
         {
-            double pricePerSec = 0.001;
+            double pricePerSec = 0.37 / 60;
             double sum = 0;
 
             foreach (var call in this.CallHistory)
@@ -240,13 +257,32 @@ namespace MobilePhoneDevice
             sb.AppendLine(string.Format("Owner: {0}", this.Owner));
             sb.AppendLine();
 
-            sb.AppendLine(dash);
-            sb.AppendLine(string.Format("Battery Specs:"));
-            sb.AppendLine(string.Format("{0}", this.battery.ToString()));
+            if (this.Battery != null)
+            {
+                sb.AppendLine(dash);
+                sb.AppendLine(string.Format("Battery Specs:"));
+                sb.AppendLine(string.Format("{0}", this.battery.ToString()));
+            }
+
+            if (this.Display != null)
+            {
+                sb.AppendLine(dash);
+                sb.AppendLine("Display Specs:");
+                sb.AppendLine(string.Format("{0}", this.display.ToString()));
+            }
 
             sb.AppendLine(dash);
-            sb.AppendLine("Display Specs:");
-            sb.AppendLine(string.Format("{0}", this.display.ToString()));
+            sb.AppendLine("Call History:");
+            sb.AppendLine();
+
+            if (this.CallHistory.Count > 0)
+                foreach (var call in this.CallHistory)
+                {
+                    sb.AppendLine(call.ToString());
+                }
+
+            sb.AppendLine();
+            sb.AppendLine(string.Format("price of all calls = {0}", this.CalcPriceOfCalls()));
 
             return sb.ToString();
         }

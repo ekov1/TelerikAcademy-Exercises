@@ -12,20 +12,9 @@ namespace MobilePhoneDevice
     {
         static void Main(string[] args)
         {
-            // gsmTest.GTest();
+             //gsmTest.GTest();
 
-            GSM one = new GSM("mod", "manu");
-
-            Console.WriteLine(one.CallHistory.Count);
-
-            Call someCall = new Call("135", 100);
-            Call two = new Call("6541651", 100);
-            one.AddCall(someCall);
-            Console.WriteLine(one.CallHistory.Count);
-            one.AddCall(two);
-            Console.WriteLine(one.CallHistory.Count);
-
-            Console.WriteLine(one.CalcPriceOfCalls());
+            GSMCallHistoryTest.HistoryTest();
 
         }
     }
