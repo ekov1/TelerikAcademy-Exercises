@@ -19,8 +19,9 @@ namespace MobilePhoneDevice
         private string manufacturer;
         private decimal? price;
         private string owner;
-        Battery battery;
-        Display display;
+        private Battery battery;
+        private Display display;
+        private List<Call> callHistory;
 
 
         // Problem 6. Static field
@@ -28,8 +29,6 @@ namespace MobilePhoneDevice
         // Add a static field and a property IPhone4S in the GSM class to hold the information about iPhone 4S.
         public static GSM iphone4s = new GSM("Iphone4S", "Apple", 1000, "Steve Jobs",
             new Battery("appleBat", "appleBat", Battery.BatteryTypes.LiIon), new Display("appleDis", "appleDis"));
-
-
 
         #region Constructors
         // Problem 2. Constructors
@@ -46,6 +45,7 @@ namespace MobilePhoneDevice
             this.Owner = owner;
             this.Battery = battery;
             this.Display = display;
+            this.CallHistory = new List<Call>();
         }
 
         public GSM(string model, string manufacturer)
@@ -132,7 +132,7 @@ namespace MobilePhoneDevice
             }
             set
             {
-                if (value.Length < 1)
+                if (value != null && value.Length < 1)
                 {
                     throw new Exception("phone owner can NOT be an empty string");
                 }
@@ -163,9 +163,47 @@ namespace MobilePhoneDevice
                 this.display = value;
             }
         }
+
+        //  Problem 9. Call history
+
+        // Add a property CallHistory in the GSM class to hold a list of the performed calls.
+        // Try to use the system class List<Call>.
+
+        public List<Call> CallHistory
+        {
+            get
+            {
+                return this.callHistory;
+            }
+            set
+            {
+                this.callHistory = value;
+            }
+        }
+
         #endregion
 
         #region Methods    
+        // Problem 10. Add/Delete calls
+
+        // Add methods in the GSM class for adding and deleting calls from the calls history.
+        // Add a method to clear the call history.
+
+        public void AddCall(Call someCall)
+        {
+            this.CallHistory.Add(someCall);
+        }
+
+        public void RemoveCall(Call someCall)
+        {
+            this.CallHistory.Remove(someCall);
+        }
+
+        public void ClearCallHistory()
+        {
+            this.CallHistory.Clear();
+        }
+
         // Problem 4. ToString
 
         // Add a method in the GSM class for displaying all information about it.
