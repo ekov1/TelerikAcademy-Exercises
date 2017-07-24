@@ -24,10 +24,8 @@ namespace MobilePhoneDevice
             Console.WriteLine(one.CallHistory.Count);
             one.AddCall(two);
             Console.WriteLine(one.CallHistory.Count);
-            one.RemoveCall(two);
-            Console.WriteLine(one.CallHistory.Count);
-            one.ClearCallHistory();
-            Console.WriteLine(one.CallHistory.Count);
+
+            Console.WriteLine(one.CalcPriceOfCalls());
 
         }
     }

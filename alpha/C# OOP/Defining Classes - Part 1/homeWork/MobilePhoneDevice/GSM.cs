@@ -204,6 +204,24 @@ namespace MobilePhoneDevice
             this.CallHistory.Clear();
         }
 
+        // Problem 11. Call price
+
+        // Add a method that calculates the total price of the calls in the call history.
+        // Assume the price per minute is fixed and is provided as a parameter.
+
+        public double CalcPriceOfCalls()
+        {
+            double pricePerSec = 0.001;
+            double sum = 0;
+
+            foreach (var call in this.CallHistory)
+            {
+                sum += (call.Duration * pricePerSec);
+            }
+
+            return sum;
+        }
+
         // Problem 4. ToString
 
         // Add a method in the GSM class for displaying all information about it.
