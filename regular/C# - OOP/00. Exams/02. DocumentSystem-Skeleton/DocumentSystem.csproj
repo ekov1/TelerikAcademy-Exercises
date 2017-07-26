@@ -36,6 +36,11 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VideoDocument.cs" />
+    <Compile Include="ExelDocument.cs" />
+    <Compile Include="AudioDocument.cs" />
+    <Compile Include="MultimediaDocument.cs" />
+    <Compile Include="WordDocument.cs" />
     <Compile Include="OfficeDocument.cs" />
     <Compile Include="PDFDocument.cs" />
     <Compile Include="BinaryDocument.cs" />

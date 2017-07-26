@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DocumentSystem
 {
-    public class OfficeDocument : BinaryDocument
+    public class WordDocument : OfficeDocument
     {
-        public string Version { get; protected set; }
+        public long? NumberOfChars { get; protected set; }
 
         public override void LoadProperty(string key, string value)
         {
-            if (key == "version")
+            if (key == "chars")
             {
-                this.Version = value;
+                this.NumberOfChars = long.Parse(value);
             }
             else
             {
@@ -25,7 +25,7 @@ namespace DocumentSystem
 
         public override void SaveAllProperties(IList<KeyValuePair<string, object>> output)
         {
-            output.Add(new KeyValuePair<string, object>("version", this.Version));
+            output.Add(new KeyValuePair<string, object>("chars", this.NumberOfChars));
             base.SaveAllProperties(output);
         }
     }

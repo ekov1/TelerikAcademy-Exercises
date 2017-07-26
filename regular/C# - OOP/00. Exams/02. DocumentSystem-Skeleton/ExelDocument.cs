@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace DocumentSystem
 {
-    public class OfficeDocument : BinaryDocument
+    public class ExelDocument : OfficeDocument
     {
-        public string Version { get; protected set; }
+        public long? Rows { get; protected set; }
+        public long? Cols { get; protected set; }
 
         public override void LoadProperty(string key, string value)
         {
-            if (key == "version")
+            if (key == "rows")
             {
-                this.Version = value;
+                this.Rows = long.Parse(value);
+            }
+            else if (key == "cols")
+            {
+                this.Cols = long.Parse(value);
             }
             else
             {
@@ -25,7 +30,8 @@ namespace DocumentSystem
 
         public override void SaveAllProperties(IList<KeyValuePair<string, object>> output)
         {
-            output.Add(new KeyValuePair<string, object>("version", this.Version));
+            output.Add(new KeyValuePair<string, object>("rows", this.Rows));
+            output.Add(new KeyValuePair<string, object>("cols", this.Cols));
             base.SaveAllProperties(output);
         }
     }

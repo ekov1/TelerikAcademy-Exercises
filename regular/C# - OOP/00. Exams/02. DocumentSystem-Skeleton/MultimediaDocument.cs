@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DocumentSystem
 {
-    public class OfficeDocument : BinaryDocument
+    public class MultimediaDocument : BinaryDocument
     {
-        public string Version { get; protected set; }
+        public long? Length { get; protected set; }
 
         public override void LoadProperty(string key, string value)
         {
-            if (key == "version")
+            if (key == "length")
             {
-                this.Version = value;
+                this.Length = long.Parse(value);
             }
             else
             {
@@ -25,7 +25,7 @@ namespace DocumentSystem
 
         public override void SaveAllProperties(IList<KeyValuePair<string, object>> output)
         {
-            output.Add(new KeyValuePair<string, object>("version", this.Version));
+            output.Add(new KeyValuePair<string, object>("length", this.Length));
             base.SaveAllProperties(output);
         }
     }

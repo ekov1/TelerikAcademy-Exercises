@@ -130,22 +130,22 @@ namespace DocumentSystem
 
         private static void AddWordDocument(string[] attributes)
         {
-            // TODO
+            AddDocument(new WordDocument(), attributes);
         }
 
         private static void AddExcelDocument(string[] attributes)
         {
-            // TODO
+            AddDocument(new ExelDocument(), attributes);
         }
 
         private static void AddAudioDocument(string[] attributes)
         {
-            // TODO
+            AddDocument(new AudioDocument(), attributes);
         }
 
         private static void AddVideoDocument(string[] attributes)
         {
-            // TODO
+            AddDocument(new VideoDocument(), attributes);
         }
 
         private static void ListDocuments()
