@@ -135,7 +135,7 @@ namespace DocumentSystem
 
         private static void AddExcelDocument(string[] attributes)
         {
-            AddDocument(new ExelDocument(), attributes);
+            AddDocument(new ExcelDocument(), attributes);
         }
 
         private static void AddAudioDocument(string[] attributes)
@@ -235,9 +235,29 @@ namespace DocumentSystem
             }
         }
 
-        private static void ChangeContent(string name, string content)
+        private static void ChangeContent(string name, string newContent)
         {
-
+            bool found = false;
+            foreach (var doc in documentsList)
+            {
+                if (doc.Name == name)
+                {
+                    found = true;
+                    if (doc is IEditable)
+                    {
+                        ((IEditable)doc).ChangeContent(newContent);
+                        Console.WriteLine("Document content changed: {0}", doc.Name);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Document is not editable: {0}", doc.Name);
+                    }
+                }
+            }
+            if (!found)
+            {
+                Console.WriteLine("Document not found: {0}", name);
+            }
         }
     }
 }

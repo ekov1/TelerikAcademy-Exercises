@@ -42,7 +42,7 @@ namespace DocumentSystem
 
             foreach (var attribute in sortedAttributes)
             {
-                if (attribute.Value != null)
+                if (attribute.Value != null )
                 {
                     sb.Append(attribute.Key);
                     sb.Append('=');

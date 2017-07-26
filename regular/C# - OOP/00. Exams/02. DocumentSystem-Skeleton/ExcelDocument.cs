@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DocumentSystem
 {
-    public class ExelDocument : OfficeDocument
+    public class ExcelDocument : OfficeDocument
     {
         public long? Rows { get; protected set; }
         public long? Cols { get; protected set; }

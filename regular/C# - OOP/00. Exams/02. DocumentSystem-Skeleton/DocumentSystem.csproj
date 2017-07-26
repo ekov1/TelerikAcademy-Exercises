@@ -38,7 +38,7 @@
   <ItemGroup>
     <Compile Include="EncryptableDocument.cs" />
     <Compile Include="VideoDocument.cs" />
-    <Compile Include="ExelDocument.cs" />
+    <Compile Include="ExcelDocument.cs" />
     <Compile Include="AudioDocument.cs" />
     <Compile Include="MultimediaDocument.cs" />
     <Compile Include="WordDocument.cs" />

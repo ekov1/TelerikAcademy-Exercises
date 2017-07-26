@@ -46,11 +46,11 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="DocumentSystem.ExelDocument" Collapsed="true">
+  <Class Name="DocumentSystem.ExcelDocument" Collapsed="true">
     <Position X="4" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgEAAAAAAAIAAAAAAAAAAAAAAAEAAAAA=</HashCode>
-      <FileName>ExelDocument.cs</FileName>
+      <FileName>ExcelDocument.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DocumentSystem.OfficeDocument" Collapsed="true">
@@ -84,7 +84,7 @@
   <Class Name="DocumentSystem.EncryptableDocument" Collapsed="true">
     <Position X="3.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAAAACAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAACAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EncryptableDocument.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
