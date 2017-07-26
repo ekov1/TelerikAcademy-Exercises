@@ -37,10 +37,10 @@ namespace DocumentSystem
             sb.Append('[');
 
             IList<KeyValuePair<string, object>> atributes = new List<KeyValuePair<string, object>>();
-
             SaveAllProperties(atributes);
+            var sortedAttributes = atributes.OrderBy(item => item.Key);
 
-            foreach (var attribute in atributes)
+            foreach (var attribute in sortedAttributes)
             {
                 if (attribute.Value != null)
                 {
@@ -50,7 +50,7 @@ namespace DocumentSystem
                     sb.Append(';');
                 }
             }
-
+            sb.Length--;
             sb.Append(']');
 
             return sb.ToString();
