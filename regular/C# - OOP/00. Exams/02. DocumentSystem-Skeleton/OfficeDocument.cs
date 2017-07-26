@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DocumentSystem
 {
-    public class OfficeDocument : BinaryDocument
+    public class OfficeDocument : EncryptableDocument
     {
         public string Version { get; protected set; }
 

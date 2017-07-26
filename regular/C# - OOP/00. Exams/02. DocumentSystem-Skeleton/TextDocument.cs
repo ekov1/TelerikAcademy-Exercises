@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DocumentSystem
 {
-    class TextDocument : Document
+    class TextDocument : Document, IEditable
     {
         public string Charset { get; protected set; }
 
@@ -27,6 +27,11 @@ namespace DocumentSystem
         {
             output.Add(new KeyValuePair<string, object>("charset", this.Charset));
             base.SaveAllProperties(output);
+        }
+
+        public void ChangeContent(string newContent)
+        {
+            this.Content = newContent;
         }
     }
 }

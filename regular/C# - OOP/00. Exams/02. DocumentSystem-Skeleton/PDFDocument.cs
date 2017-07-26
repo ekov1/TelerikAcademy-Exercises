@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DocumentSystem
 {
-    public class PDFDocument : BinaryDocument
+    public class PDFDocument : EncryptableDocument
     {
         public long NumberOFPages { get; protected set; }
 

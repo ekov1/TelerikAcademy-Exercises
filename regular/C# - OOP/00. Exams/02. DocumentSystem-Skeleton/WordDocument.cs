@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DocumentSystem
 {
-    public class WordDocument : OfficeDocument
+    public class WordDocument : OfficeDocument, IEditable
     {
         public long? NumberOfChars { get; protected set; }
 
@@ -27,6 +27,11 @@ namespace DocumentSystem
         {
             output.Add(new KeyValuePair<string, object>("chars", this.NumberOfChars));
             base.SaveAllProperties(output);
+        }
+
+        public void ChangeContent(string newContent)
+        {
+            this.Content = newContent;
         }
     }
 }

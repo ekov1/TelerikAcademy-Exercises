@@ -165,17 +165,74 @@ namespace DocumentSystem
 
         private static void EncryptDocument(string name)
         {
-            // TODO
+            bool found = false;
+            foreach (var doc in documentsList)
+            {
+                if (doc.Name == name)
+                {
+                    found = true;
+                    if (doc is IEncryptable)
+                    {
+                        ((IEncryptable)doc).Encrypt();
+                        Console.WriteLine("Document encrypted: {0}", doc.Name);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Document does not support encryption: {0}", doc.Name);
+                    }
+                }
+            }
+            if (!found)
+            {
+                Console.WriteLine("Document not found: {0}", name);
+            }
         }
 
         private static void DecryptDocument(string name)
         {
-            // TODO
+            bool found = false;
+            foreach (var doc in documentsList)
+            {
+                if (doc.Name == name)
+                {
+                    found = true;
+                    if (doc is IEncryptable)
+                    {
+                        ((IEncryptable)doc).Decrypt();
+                        Console.WriteLine("Document decrypted: {0}", doc.Name);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Document does not support decryption: {0}", doc.Name);
+                    }
+                }
+            }
+            if (!found)
+            {
+                Console.WriteLine("Document not found: {0}", name);
+            }
         }
 
         private static void EncryptAllDocuments()
         {
-            // TODO
+            bool foundEncryptable = false;
+            foreach (var doc in documentsList)
+            {
+                if (doc is IEncryptable)
+                {
+                    foundEncryptable = true;
+                    ((IEncryptable)doc).Encrypt();
+                }
+            }
+
+            if (!foundEncryptable)
+            {
+                Console.WriteLine("No encryptable documents found");
+            }
+            else
+            {
+                Console.WriteLine("All documents encrypted");
+            }
         }
 
         private static void ChangeContent(string name, string content)

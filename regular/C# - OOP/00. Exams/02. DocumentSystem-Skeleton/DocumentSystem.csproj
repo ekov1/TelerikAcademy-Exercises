@@ -36,6 +36,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EncryptableDocument.cs" />
     <Compile Include="VideoDocument.cs" />
     <Compile Include="ExelDocument.cs" />
     <Compile Include="AudioDocument.cs" />
