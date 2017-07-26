@@ -5,6 +5,8 @@ namespace DocumentSystem
 {
     public class DocumentSystem
     {
+        private static IList<IDocument> documentsList = new List<IDocument>();
+
         static void Main()
         {
             IList<string> allCommands = ReadAllCommands();
@@ -96,7 +98,18 @@ namespace DocumentSystem
 
         private static void AddTextDocument(string[] attributes)
         {
-            // TODO
+            TextDocument doc = new TextDocument();
+
+            foreach (var attribute in attributes)
+            {
+                string[] tokens = attribute.Split('=');
+                string propName = tokens[0];
+                string propValue = tokens[1];
+
+                doc.LoadProperty(propName, propValue);
+
+                documentsList.Add(doc);
+            }
         }
 
         private static void AddPdfDocument(string[] attributes)
@@ -146,7 +159,7 @@ namespace DocumentSystem
 
         private static void ChangeContent(string name, string content)
         {
-            // TODO
+
         }
     }
 }
