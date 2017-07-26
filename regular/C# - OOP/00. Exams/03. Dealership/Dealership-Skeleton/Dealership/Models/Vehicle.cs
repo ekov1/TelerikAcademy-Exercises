@@ -8,8 +8,28 @@ using Dealership.Common.Enums;
 
 namespace Dealership.Models
 {
-    class Vehicle : IVehicle
+    public abstract class Vehicle : IVehicle
     {
+        public int wheels;
+        private string make;
+        private string model;
+        private IList<IComment> comments;
+        private decimal price;
+
+        public string Make
+        {
+            get
+            {
+                return this.make;
+            }
+            private set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Make should no be mull or white space!");
+                }
+            }
+        }
         public IList<IComment> Comments
         {
             get
@@ -18,13 +38,7 @@ namespace Dealership.Models
             }
         }
 
-        public string Make
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+
 
         public string Model
         {
@@ -42,20 +56,9 @@ namespace Dealership.Models
             }
         }
 
-        public VehicleType Type
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public VehicleType Type { get; private set; }
 
-        public int Wheels
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public abstract int Wheels { get; }
+
     }
 }
