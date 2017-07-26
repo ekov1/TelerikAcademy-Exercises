@@ -3,7 +3,7 @@
   <Class Name="DocumentSystem.DocumentSystem" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIACAAAAAAAAAIAAEAAAhAAAAAgAAAgAAAAgBkAEAIA=</HashCode>
+      <HashCode>AIACAAAAAAAAAIAAEAAAhAAAAAgAAAgAAAAgBkAEBIA=</HashCode>
       <FileName>DocumentSystem.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -22,11 +22,11 @@
       <FileName>TextDocument.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DocumentSystem.BinaryDocument" Collapsed="true">
+  <Class Name="DocumentSystem.OfficeDocument" Collapsed="true">
     <Position X="2.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BinaryDocument.cs</FileName>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAUAAAAA=</HashCode>
+      <FileName>OfficeDocument.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="DocumentSystem.IEncryptable" Collapsed="true">

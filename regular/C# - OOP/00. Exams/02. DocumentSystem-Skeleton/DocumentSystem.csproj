@@ -36,6 +36,8 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OfficeDocument.cs" />
+    <Compile Include="PDFDocument.cs" />
     <Compile Include="BinaryDocument.cs" />
     <Compile Include="Document.cs" />
     <Compile Include="DocumentSystem.cs" />

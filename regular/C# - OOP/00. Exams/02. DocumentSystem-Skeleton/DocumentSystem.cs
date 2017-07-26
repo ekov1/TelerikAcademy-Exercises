@@ -96,10 +96,8 @@ namespace DocumentSystem
             }
         }
 
-        private static void AddTextDocument(string[] attributes)
+        private static void AddDocument(IDocument doc, string[] attributes)
         {
-            TextDocument doc = new TextDocument();
-
             foreach (var attribute in attributes)
             {
                 string[] tokens = attribute.Split('=');
@@ -120,9 +118,14 @@ namespace DocumentSystem
             }
         }
 
+        private static void AddTextDocument(string[] attributes)
+        {
+            AddDocument(new TextDocument(), attributes);
+        }
+
         private static void AddPdfDocument(string[] attributes)
         {
-            // TODO
+            AddDocument(new PDFDocument(), attributes);
         }
 
         private static void AddWordDocument(string[] attributes)
