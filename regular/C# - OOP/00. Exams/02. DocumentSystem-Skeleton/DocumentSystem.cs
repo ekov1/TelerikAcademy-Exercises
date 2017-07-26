@@ -107,8 +107,16 @@ namespace DocumentSystem
                 string propValue = tokens[1];
 
                 doc.LoadProperty(propName, propValue);
+            }
 
+            if (doc.Name != null)
+            {
                 documentsList.Add(doc);
+                Console.WriteLine("Document added: {0}", doc.Name);
+            }
+            else
+            {
+                Console.WriteLine("Document has no name");
             }
         }
 
@@ -139,7 +147,17 @@ namespace DocumentSystem
 
         private static void ListDocuments()
         {
-            // TODO
+            if (documentsList.Count == 0)
+            {
+                Console.WriteLine("No documents found");
+            }
+            else
+            {
+                foreach (var document in documentsList)
+                {
+                    Console.WriteLine(document.ToString());
+                }
+            }
         }
 
         private static void EncryptDocument(string name)

@@ -10,11 +10,11 @@ namespace DocumentSystem
     {
         public string Charset { get; protected set; }
 
-        public void LoadProperty(string key, string value)
+        public override void LoadProperty(string key, string value)
         {
             if (key == "charset")
             {
-                this.Name = value;
+                this.Charset = value;
             }
             else
             {

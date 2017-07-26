@@ -11,7 +11,7 @@ namespace DocumentSystem
         public string Content { get; protected set; }
         public string Name { get; protected set; }
 
-        public void LoadProperty(string key, string value)
+        public virtual void LoadProperty(string key, string value)
         {
             if (key == "name")
             {
@@ -27,6 +27,33 @@ namespace DocumentSystem
         {
             output.Add(new KeyValuePair<string, object>("name", this.Name));
             output.Add(new KeyValuePair<string, object>("content", this.Content));
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.Append(this.GetType().Name);
+            sb.Append('[');
+
+            IList<KeyValuePair<string, object>> atributes = new List<KeyValuePair<string, object>>();
+
+            SaveAllProperties(atributes);
+
+            foreach (var attribute in atributes)
+            {
+                if (attribute.Value != null)
+                {
+                    sb.Append(attribute.Key);
+                    sb.Append('=');
+                    sb.Append(attribute.Value);
+                    sb.Append(';');
+                }
+            }
+
+            sb.Append(']');
+
+            return sb.ToString();
         }
     }
 }
