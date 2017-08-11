@@ -41,7 +41,11 @@ namespace Dealership.Models
                 Validator.ValidateNull(value, "Make must not be null");
                 Validator.ValidateIntRange(value.Length,
                     Constants.MinMakeLength, Constants.MaxMakeLength,
-                    string.Format(Constants.StringMustBeBetweenMinAndMax, value,
+                    string.Format(
+                        Constants.StringMustBeBetweenMinAndMax,
+                        // value,
+                        // "Make",
+                        nameof(this.Make),
                     Constants.MinMakeLength, Constants.MaxMakeLength));
             }
         }
@@ -71,7 +75,7 @@ namespace Dealership.Models
                 Validator.ValidateNull(value, "Model must not be null");
                 Validator.ValidateIntRange(value.Length,
                     Constants.MinModelLength, Constants.MaxModelLength,
-                    string.Format(Constants.StringMustBeBetweenMinAndMax, value,
+                    string.Format(Constants.StringMustBeBetweenMinAndMax, nameof(this.Model),
                     Constants.MinModelLength, Constants.MaxModelLength));
             }
         }

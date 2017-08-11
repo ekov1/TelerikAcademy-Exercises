@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B17B8C19-9FD7-4D91-993A-564BD2908C50}</ProjectGuid>
+    <ProjectGuid>{46657D75-8952-4500-AAD1-539FD248E510}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_01.School_Classes</RootNamespace>
-    <AssemblyName>_01.School_Classes</AssemblyName>
+    <RootNamespace>OlympicGames</RootNamespace>
+    <AssemblyName>OlympicGames</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,16 +43,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Human.cs" />
-    <Compile Include="SchoolClass.cs" />
+    <Compile Include="Core\Commands\Abstracts\Command.cs" />
+    <Compile Include="Core\Providers\CommandParser.cs" />
+    <Compile Include="Core\Commands\CreateBoxerCommand.cs" />
+    <Compile Include="Core\Commands\CreateSprinterCommand.cs" />
+    <Compile Include="Core\Commands\ListOlympiansCommand.cs" />
+    <Compile Include="Core\Contracts\ICommand.cs" />
+    <Compile Include="Core\Contracts\ICommandParser.cs" />
+    <Compile Include="Core\Contracts\ICommandProcessor.cs" />
+    <Compile Include="Core\Contracts\IEngine.cs" />
+    <Compile Include="Core\Contracts\IOlympicCommittee.cs" />
+    <Compile Include="Core\Providers\OlympicCommittee.cs" />
+    <Compile Include="Core\Contracts\IOlympicsFactory.cs" />
+    <Compile Include="Core\Providers\CommandProcessor.cs" />
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Core\Factories\OlympicsFactory.cs" />
+    <Compile Include="Olympics\Models\Boxer.cs" />
+    <Compile Include="Olympics\Models\Olympian.cs" />
+    <Compile Include="Olympics\Models\Sprinter.cs" />
+    <Compile Include="Olympics\Contracts\IOlympian.cs" />
+    <Compile Include="Olympics\Contracts\IBoxer.cs" />
+    <Compile Include="Olympics\Contracts\ISprinter.cs" />
+    <Compile Include="Olympics\Enums\BoxingCategory.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
-    <Compile Include="Worker.cs" />
+    <Compile Include="Utils\GlobalConstants.cs" />
+    <Compile Include="Utils\Validator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
