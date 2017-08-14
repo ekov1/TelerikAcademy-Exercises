@@ -13,7 +13,8 @@
 
         public Pilot(string name)
         {
-
+            this.Name = name;
+            this.machines = new List<IMachine>();
         }
 
         public string Name
@@ -27,7 +28,7 @@
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentNullException("Name", "Name cannot be null");
+                    throw new ArgumentNullException("Name", "Pilot name cannot be null or empty");
                 }
                 this.name = value;
             }
@@ -44,7 +45,9 @@
 
         public string Report()
         {
-            throw new NotImplementedException();
+            StringBuilder result = new StringBuilder();
+
+            return result.ToString();
         }
     }
 }
