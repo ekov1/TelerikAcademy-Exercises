@@ -47,6 +47,21 @@
         {
             StringBuilder result = new StringBuilder();
 
+            string pilotName = this.Name;
+            string numberOfMachines = this.machines.Count == 0 ? "no" : this.machines.Count.ToString();
+            string machineWord = this.machines.Count == 1 ? "machine" : "machines";
+
+            result.AppendLine(string.Format("{0} - {1} {2}", pilotName, numberOfMachines, machineWord));
+
+            var sortedMachines = this.machines
+                .OrderBy(m => m.HealthPoints)
+                .ThenBy(m => m.Name);
+
+            foreach (var machine in this.machines)
+            {
+                result.AppendLine(machine.ToString());
+            }
+
             return result.ToString();
         }
     }
