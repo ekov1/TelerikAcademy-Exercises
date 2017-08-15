@@ -6,47 +6,33 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-   public class Machine : IMachine
+    public abstract class Machine : IMachine
     {
-        public double AttackPoints
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        private string name;
+        private IPilot pilot;
+        private IList<string> targets;
 
-        public double DefensePoints
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public double AttackPoints { get; private set; }
 
-        public double HealthPoints
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        public double DefensePoints { get; private set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public double HealthPoints { get; set; }
+
 
         public string Name
         {
             get
             {
-                throw new NotImplementedException();
+                return this.name;
             }
 
             set
             {
-                throw new NotImplementedException();
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException("Name", "Machine name cannot be null or empty");
+                }
+                this.name = value;
             }
         }
 
@@ -54,12 +40,16 @@
         {
             get
             {
-                throw new NotImplementedException();
+                return this.pilot;
             }
 
             set
             {
-                throw new NotImplementedException();
+                if (value == null)
+                {
+                    throw new ArgumentNullException("Engaged pilot name cannot be null");
+                }
+                this.pilot = value;
             }
         }
 
