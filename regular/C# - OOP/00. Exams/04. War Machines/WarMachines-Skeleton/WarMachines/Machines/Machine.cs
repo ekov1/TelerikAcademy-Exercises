@@ -93,11 +93,11 @@
 
             string targetsAsString = this.targets.Count == 0 ? "None" : string.Join(", ", this.targets);
 
-            result.AppendLine(string.Format(" - {0}", this.Name));
+            result.AppendLine(string.Format("- {0}", this.Name));
             result.AppendLine(string.Format(" *Type: {0}", this.GetType().Name));
             result.AppendLine(string.Format(" *Health: {0}", this.HealthPoints));
             result.AppendLine(string.Format(" *Attack: {0}", this.AttackPoints));
-            result.AppendLine(string.Format(" *Deffense: {0}", this.DefensePoints));
+            result.AppendLine(string.Format(" *Defense: {0}", this.DefensePoints));
             result.AppendLine(string.Format(" *Targets: {0}", targetsAsString));
 
             return result.ToString();

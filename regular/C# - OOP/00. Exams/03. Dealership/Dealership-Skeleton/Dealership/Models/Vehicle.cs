@@ -7,48 +7,22 @@ namespace Dealership.Models
 {
     public abstract class Vehicle : IVehicle
     {
-        public int wheels;
+        private int wheels;
+        private VehicleType type;
         private string make;
         private string model;
         private IList<IComment> comments;
         private decimal price;
 
-        // Constructors
         public Vehicle(string make, string model, VehicleType type, decimal price)
         {
             this.Make = make;
             this.Model = model;
             this.Type = type;
             this.Price = price;
-            this.Comments = new List<IComment>();
+            this.comments = new List<IComment>();
         }
 
-
-        // Properties
-        public string Make
-        {
-            get
-            {
-                return this.make;
-            }
-            private set
-            {
-                //if (string.IsNullOrWhiteSpace(value))
-                //{
-                //    throw new ArgumentException("Make should no be mull or white space!");
-                //}
-
-                Validator.ValidateNull(value, "Make must not be null");
-                Validator.ValidateIntRange(value.Length,
-                    Constants.MinMakeLength, Constants.MaxMakeLength,
-                    string.Format(
-                        Constants.StringMustBeBetweenMinAndMax,
-                        // value,
-                        // "Make",
-                        nameof(this.Make),
-                    Constants.MinMakeLength, Constants.MaxMakeLength));
-            }
-        }
         public IList<IComment> Comments
         {
             get
@@ -57,11 +31,31 @@ namespace Dealership.Models
             }
             private set
             {
-                Validator.ValidateNull(value, "Comments must not be null");
-                this.comments = value;
+                Validator.ValidateNull(value, "Comments should not be null");
             }
         }
 
+        public string Make
+        {
+            get
+            {
+                return this.make;
+            }
+            private set
+            {
+                Validator.ValidateNull(value, "Make must not be null!");
+                Validator.ValidateIntRange(
+                    value.Length,
+                    Constants.MinMakeLength,
+                    Constants.MaxMakeLength,
+                    string.Format(
+                        Constants.StringMustBeBetweenMinAndMax,
+                   nameof(this.Make),
+                    Constants.MinMakeLength,
+                    Constants.MaxMakeLength));
+                this.make = value;
+            }
+        }
 
         public string Model
         {
@@ -69,14 +63,21 @@ namespace Dealership.Models
             {
                 return this.model;
             }
-
             private set
             {
-                Validator.ValidateNull(value, "Model must not be null");
-                Validator.ValidateIntRange(value.Length,
-                    Constants.MinModelLength, Constants.MaxModelLength,
-                    string.Format(Constants.StringMustBeBetweenMinAndMax, nameof(this.Model),
-                    Constants.MinModelLength, Constants.MaxModelLength));
+                Validator.ValidateNull(value, "Model can not be null or empty!");
+
+                Validator.ValidateIntRange(
+                    value.Length,
+                    Constants.MinModelLength,
+                    Constants.MaxModelLength,
+                    string.Format(
+                        Constants.StringMustBeBetweenMinAndMax,
+                    nameof(this.Model),
+                     Constants.MinModelLength,
+                    Constants.MaxModelLength));
+
+                this.model = value;
             }
         }
 
@@ -89,15 +90,26 @@ namespace Dealership.Models
 
             private set
             {
-                //Validator.ValidateNull(value, "Price must not be null");
-                Validator.ValidateDecimalRange(value,
-                    Constants.MinPrice, Constants.MaxPrice,
-                    string.Format(Constants.StringMustBeBetweenMinAndMax, value,
-                    Constants.MinPrice, Constants.MaxPrice));
+                Validator.ValidateNull(value, "Price can not be null or empty!");
+
+                Validator.ValidateDecimalRange(
+                    value,
+                    Constants.MinPrice,
+                    Constants.MaxPrice,
+                    string.Format(
+                        Constants.StringMustBeBetweenMinAndMax,
+                     nameof(this.Price),
+                    Constants.MinPrice,
+                    Constants.MaxPrice));
+
+                this.price = value;
             }
         }
 
-        public VehicleType Type { get; private set; }
+        public VehicleType Type
+        {
+            get; private set;
+        }
 
         public abstract int Wheels { get; }
 

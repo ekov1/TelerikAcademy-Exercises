@@ -240,7 +240,7 @@
                 return string.Format(InvalidAttackTarget, attackingMachineName, defendingMachineName);
             }
 
-            attackingMachine.Targets.Add(defendingMachineName);
+            attackingMachine.Attack(defendingMachineName);
 
             var attackPoints = attackingMachine.AttackPoints;
             var defensePoints = defendingMachine.DefensePoints;

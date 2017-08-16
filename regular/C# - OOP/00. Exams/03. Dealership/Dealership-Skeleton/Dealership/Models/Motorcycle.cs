@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dealership.Models
 {
-    public class VeryImportant
+    class Motorcycle
     {
-        // Take a break once in awhile :)
-        string url = "http://9gag.com";
     }
 }

@@ -11,7 +11,7 @@ namespace WarMachines.Machines
     {
         private const int TankInitialHealthPoints = 100;
         private const int AttackPointsModifier = 40;
-        private const int DeffensePointsModifier = 30;
+        private const int DefensePointsModifier = 30;
 
         public Tank(string name, double attackPoints, double defensePoints)
             : base(name, TankInitialHealthPoints, attackPoints, defensePoints)
@@ -24,12 +24,12 @@ namespace WarMachines.Machines
             if (this.DefenseMode)
             {
                 this.AttackPoints += AttackPointsModifier;
-                this.DefensePoints -= DeffensePointsModifier;
+                this.DefensePoints -= DefensePointsModifier;
             }
             else
             {
                 this.AttackPoints -= AttackPointsModifier;
-                this.DefensePoints += DeffensePointsModifier;
+                this.DefensePoints += DefensePointsModifier;
             }
             this.DefenseMode = !this.DefenseMode;
         }
@@ -41,7 +41,7 @@ namespace WarMachines.Machines
             string machineAsString = base.ToString();
             string defenseModeAsString = this.DefenseMode ? ModeON : ModeOff;
 
-            result.AppendLine(machineAsString);
+            result.Append(machineAsString);
             result.AppendLine(string.Format(" *Defense: {0}", defenseModeAsString));
 
             return result.ToString();

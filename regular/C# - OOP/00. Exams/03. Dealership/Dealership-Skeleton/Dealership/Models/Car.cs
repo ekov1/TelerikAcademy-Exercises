@@ -1,18 +1,15 @@
-﻿using System;
-using Dealership.Common;
+﻿using Dealership.Common;
 using Dealership.Common.Enums;
 using Dealership.Contracts;
 
 namespace Dealership.Models
 {
-    public class Car : Vehicle, ICar
+    public class Car : Vehicle, ICar, IVehicle
     {
         private int seats;
 
-        public Car(string make,
-            string model,
-            decimal price,
-            int seats) : base(make, model, price)
+        public Car(string make, string model, VehicleType type, decimal price, int seats)
+            : base(make, model, type, price)
         {
             this.Seats = seats;
         }
@@ -23,17 +20,17 @@ namespace Dealership.Models
             {
                 return this.seats;
             }
+
             private set
             {
                 Validator.ValidateIntRange(value,
                     Constants.MinSeats,
                     Constants.MaxSeats,
-                    string.Format(Constants.NumberMustBeBetweenMinAndMax,
-                    nameof(this.Seats),
-                    Constants.MinSeats,
-                    Constants.MaxSeats));
+                    string.Format(
+                        Constants.NumberMustBeBetweenMinAndMax,
 
-                this.seats = value;
+                            Constants.MinSeats,
+                    Constants.MaxSeats));
             }
         }
 
@@ -43,19 +40,6 @@ namespace Dealership.Models
             {
                 return (int)VehicleType.Car;
             }
-        }
-
-        public override VehicleType Type
-        {
-            get
-            {
-                return VehicleType.Car;
-            }
-        }
-
-        protected override string GetVehicleSpecificText()
-        {
-            return string.Format("Seats: {0}", this.Seats);
         }
     }
 }

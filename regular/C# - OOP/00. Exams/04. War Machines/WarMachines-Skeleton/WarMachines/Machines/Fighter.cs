@@ -32,7 +32,7 @@ namespace WarMachines.Machines
             string machineAsString = base.ToString();
             string stealthModeAsString = this.StealthMode ? ModeON : ModeOff;
 
-            result.AppendLine(machineAsString);
+            result.Append(machineAsString);
             result.AppendLine(string.Format(" *Stealth: {0}", stealthModeAsString));
 
             return result.ToString();
