@@ -9,23 +9,44 @@ namespace WarMachines.Machines
 {
     public class Tank : Machine, ITank, IMachine
     {
-        private const int tankInitialHealthPoints = 100;
+        private const int TankInitialHealthPoints = 100;
+        private const int AttackPointsModifier = 40;
+        private const int DeffensePointsModifier = 30;
+        private const string DeffenseModeOnAsString = "ON";
+        private const string DeffenseModeOffAsString = "OFF";
 
         public Tank(string name, double healthPoints, double attackPoints, double defensePoints)
-            : base(name, tankInitialHealthPoints, attackPoints, defensePoints)
+            : base(name, TankInitialHealthPoints, attackPoints, defensePoints)
         { }
 
-        public bool DefenseMode
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public bool DefenseMode { get; private set; }
 
         public void ToggleDefenseMode()
         {
-            throw new NotImplementedException();
+            if (this.DefenseMode)
+            {
+                this.AttackPoints += AttackPointsModifier;
+                this.DefensePoints -= DeffensePointsModifier;
+            }
+            else
+            {
+                this.AttackPoints -= AttackPointsModifier;
+                this.DefensePoints += DeffensePointsModifier;
+            }
+            this.DefenseMode = !this.DefenseMode;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder result = new StringBuilder();
+
+            string machineAsString = base.ToString();
+            string defenseModeAsString = this.DefenseMode ? DeffenseModeOnAsString : DeffenseModeOffAsString;
+
+            result.AppendLine(machineAsString);
+            result.AppendLine(string.Format(" *Defense: {0}", defenseModeAsString));
+
+            return result.ToString();
         }
     }
 }
