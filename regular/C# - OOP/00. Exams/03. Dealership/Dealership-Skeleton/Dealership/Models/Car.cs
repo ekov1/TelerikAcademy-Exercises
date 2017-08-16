@@ -23,14 +23,16 @@ namespace Dealership.Models
 
             private set
             {
+                Validator.ValidateNull(value, "Seats can not be null!");
                 Validator.ValidateIntRange(value,
                     Constants.MinSeats,
                     Constants.MaxSeats,
                     string.Format(
-                        Constants.NumberMustBeBetweenMinAndMax,
-
-                            Constants.MinSeats,
+                    Constants.NumberMustBeBetweenMinAndMax,
+                    nameof(this.Seats),
+                    Constants.MinSeats,
                     Constants.MaxSeats));
+                this.seats = value;
             }
         }
 

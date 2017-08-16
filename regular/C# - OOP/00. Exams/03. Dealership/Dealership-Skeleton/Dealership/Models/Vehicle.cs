@@ -49,8 +49,8 @@ namespace Dealership.Models
                     Constants.MinMakeLength,
                     Constants.MaxMakeLength,
                     string.Format(
-                        Constants.StringMustBeBetweenMinAndMax,
-                   nameof(this.Make),
+                    Constants.StringMustBeBetweenMinAndMax,
+                    nameof(this.Make),
                     Constants.MinMakeLength,
                     Constants.MaxMakeLength));
                 this.make = value;
@@ -66,17 +66,15 @@ namespace Dealership.Models
             private set
             {
                 Validator.ValidateNull(value, "Model can not be null or empty!");
-
                 Validator.ValidateIntRange(
                     value.Length,
                     Constants.MinModelLength,
                     Constants.MaxModelLength,
                     string.Format(
-                        Constants.StringMustBeBetweenMinAndMax,
+                    Constants.StringMustBeBetweenMinAndMax,
                     nameof(this.Model),
-                     Constants.MinModelLength,
+                    Constants.MinModelLength,
                     Constants.MaxModelLength));
-
                 this.model = value;
             }
         }
@@ -97,8 +95,8 @@ namespace Dealership.Models
                     Constants.MinPrice,
                     Constants.MaxPrice,
                     string.Format(
-                        Constants.StringMustBeBetweenMinAndMax,
-                     nameof(this.Price),
+                    Constants.StringMustBeBetweenMinAndMax,
+                    nameof(this.Price),
                     Constants.MinPrice,
                     Constants.MaxPrice));
 
