@@ -3,21 +3,33 @@
     using Interfaces;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+
+    /// <summary>
+    /// Represents a machine...
+    /// </summary>
     public abstract class Machine : IMachine
     {
+        // Fields
         private string name;
         private IPilot pilot;
         private IList<string> targets;
 
+        // Constructors
+        public Machine(string name, double healthPoints, double attackPoints, double defensePoints)
+        {
+            this.Name = name;
+            this.HealthPoints = healthPoints;
+            this.AttackPoints = attackPoints;
+            this.DefensePoints = defensePoints;
+            this.targets = new List<string>();
+        }
+
+        // Properties
         public double AttackPoints { get; private set; }
 
         public double DefensePoints { get; private set; }
 
         public double HealthPoints { get; set; }
-
 
         public string Name
         {
@@ -57,13 +69,18 @@
         {
             get
             {
-                throw new NotImplementedException();
+                return new List<string>(this.targets);
             }
         }
 
         public void Attack(string target)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrEmpty(target))
+            {
+                throw new ArgumentNullException("Target cannot be null or empty!");
+            }
+
+            this.targets.Add(target);
         }
     }
 }
