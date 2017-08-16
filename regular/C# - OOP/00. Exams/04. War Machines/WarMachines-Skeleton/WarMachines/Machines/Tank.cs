@@ -7,8 +7,14 @@ using WarMachines.Interfaces;
 
 namespace WarMachines.Machines
 {
-    public class Tank : Machine,ITank, IMachine
+    public class Tank : Machine, ITank, IMachine
     {
+        private const int tankInitialHealthPoints = 100;
+
+        public Tank(string name, double healthPoints, double attackPoints, double defensePoints)
+            : base(name, tankInitialHealthPoints, attackPoints, defensePoints)
+        { }
+
         public bool DefenseMode
         {
             get

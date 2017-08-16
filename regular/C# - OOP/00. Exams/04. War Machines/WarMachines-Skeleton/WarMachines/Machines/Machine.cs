@@ -3,7 +3,7 @@
     using Interfaces;
     using System;
     using System.Collections.Generic;
-
+    using System.Text;
     /// <summary>
     /// Represents a machine...
     /// </summary>
@@ -81,6 +81,22 @@
             }
 
             this.targets.Add(target);
+        }
+
+        public override string ToString()
+        {
+            StringBuilder result = new StringBuilder();
+
+            string targetsAsString = this.targets.Count == 0 ? "None" : string.Join(", ", this.targets);
+
+            result.AppendLine(string.Format(" - {0}", this.Name));
+            result.AppendLine(string.Format(" *Type: {0}", this.GetType().Name));
+            result.AppendLine(string.Format(" *Health: {0}", this.HealthPoints));
+            result.AppendLine(string.Format(" *Attack: {0}", this.AttackPoints));
+            result.AppendLine(string.Format(" *Deffense: {0}", this.DefensePoints));
+            result.AppendLine(string.Format(" *Targets: {0}", targetsAsString));
+
+            return result.ToString();
         }
     }
 }
