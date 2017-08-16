@@ -9,6 +9,10 @@
     /// </summary>
     public abstract class Machine : IMachine
     {
+        // Constants
+        protected const string ModeON = "ON";
+        protected const string ModeOff = "OFF";
+
         // Fields
         private string name;
         private IPilot pilot;

@@ -9,17 +9,33 @@ namespace WarMachines.Machines
 {
     public class Fighter : Machine, IMachine, IFighter
     {
-        public bool StealthMode
+        private const int FighterInitialHealthPoints = 200;
+
+        public Fighter(string name, double attackPoints, double defensePoints,
+            bool initialStealthMode)
+            : base(name, FighterInitialHealthPoints, attackPoints, defensePoints)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            this.StealthMode = initialStealthMode;
         }
+
+        public bool StealthMode { get; private set; }
 
         public void ToggleStealthMode()
         {
-            throw new NotImplementedException();
+            this.StealthMode = !this.StealthMode;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder result = new StringBuilder();
+
+            string machineAsString = base.ToString();
+            string stealthModeAsString = this.StealthMode ? ModeON : ModeOff;
+
+            result.AppendLine(machineAsString);
+            result.AppendLine(string.Format(" *Stealth: {0}", stealthModeAsString));
+
+            return result.ToString();
         }
     }
 }

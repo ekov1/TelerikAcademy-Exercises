@@ -12,10 +12,8 @@ namespace WarMachines.Machines
         private const int TankInitialHealthPoints = 100;
         private const int AttackPointsModifier = 40;
         private const int DeffensePointsModifier = 30;
-        private const string DeffenseModeOnAsString = "ON";
-        private const string DeffenseModeOffAsString = "OFF";
 
-        public Tank(string name, double healthPoints, double attackPoints, double defensePoints)
+        public Tank(string name, double attackPoints, double defensePoints)
             : base(name, TankInitialHealthPoints, attackPoints, defensePoints)
         { }
 
@@ -41,7 +39,7 @@ namespace WarMachines.Machines
             StringBuilder result = new StringBuilder();
 
             string machineAsString = base.ToString();
-            string defenseModeAsString = this.DefenseMode ? DeffenseModeOnAsString : DeffenseModeOffAsString;
+            string defenseModeAsString = this.DefenseMode ? ModeON : ModeOff;
 
             result.AppendLine(machineAsString);
             result.AppendLine(string.Format(" *Defense: {0}", defenseModeAsString));
