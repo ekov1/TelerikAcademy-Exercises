@@ -89,7 +89,6 @@ namespace Dealership.Models
             private set
             {
                 Validator.ValidateNull(value, "Price can not be null or empty!");
-
                 Validator.ValidateDecimalRange(
                     value,
                     Constants.MinPrice,
@@ -99,7 +98,6 @@ namespace Dealership.Models
                     nameof(this.Price),
                     Constants.MinPrice,
                     Constants.MaxPrice));
-
                 this.price = value;
             }
         }

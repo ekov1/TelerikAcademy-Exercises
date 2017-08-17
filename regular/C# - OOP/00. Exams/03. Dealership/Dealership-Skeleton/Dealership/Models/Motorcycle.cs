@@ -13,10 +13,10 @@ namespace Dealership.Models
     {
         private string category;
 
-        public Motorcycle(string make, string model, VehicleType type, decimal price)
+        public Motorcycle(string make, string model, VehicleType type, decimal price, string category)
             : base(make, model, type, price)
         {
-
+            this.Category = category;
         }
         public string Category
         {
