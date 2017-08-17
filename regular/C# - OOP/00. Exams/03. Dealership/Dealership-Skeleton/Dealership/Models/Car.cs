@@ -1,4 +1,5 @@
-﻿using Dealership.Common;
+﻿using System;
+using Dealership.Common;
 using Dealership.Common.Enums;
 using Dealership.Contracts;
 
@@ -8,8 +9,8 @@ namespace Dealership.Models
     {
         private int seats;
 
-        public Car(string make, string model, VehicleType type, decimal price, int seats)
-            : base(make, model, type, price)
+        public Car(string make, string model, decimal price, int seats)
+            : base(make, model, price)
         {
             this.Seats = seats;
         }
@@ -41,6 +42,14 @@ namespace Dealership.Models
             get
             {
                 return (int)VehicleType.Car;
+            }
+        }
+
+        public override VehicleType Type
+        {
+            get
+            {
+                return VehicleType.Car;
             }
         }
     }

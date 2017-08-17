@@ -13,8 +13,8 @@ namespace Dealership.Models
     {
         private int capacity;
 
-        public Truck(string make, string model, VehicleType type, decimal price, int capacity)
-            : base(make, model, type, price)
+        public Truck(string make, string model, decimal price, int capacity)
+            : base(make, model, price)
         {
             this.WeightCapacity = capacity;
         }
@@ -46,6 +46,14 @@ namespace Dealership.Models
             get
             {
                 return (int)VehicleType.Truck;
+            }
+        }
+
+        public override VehicleType Type
+        {
+            get
+            {
+                return VehicleType.Truck;
             }
         }
     }

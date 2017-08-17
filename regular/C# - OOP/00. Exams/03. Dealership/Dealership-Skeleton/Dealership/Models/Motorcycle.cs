@@ -13,8 +13,8 @@ namespace Dealership.Models
     {
         private string category;
 
-        public Motorcycle(string make, string model, VehicleType type, decimal price, string category)
-            : base(make, model, type, price)
+        public Motorcycle(string make, string model, decimal price, string category)
+            : base(make, model, price)
         {
             this.Category = category;
         }
@@ -45,6 +45,14 @@ namespace Dealership.Models
             get
             {
                 return (int)VehicleType.Motorcycle;
+            }
+        }
+
+        public override VehicleType Type
+        {
+            get
+            {
+                return VehicleType.Motorcycle;
             }
         }
     }

@@ -14,11 +14,10 @@ namespace Dealership.Models
         private IList<IComment> comments;
         private decimal price;
 
-        public Vehicle(string make, string model, VehicleType type, decimal price)
+        public Vehicle(string make, string model, decimal price)
         {
             this.Make = make;
             this.Model = model;
-            this.Type = type;
             this.Price = price;
             this.comments = new List<IComment>();
         }
@@ -102,9 +101,9 @@ namespace Dealership.Models
             }
         }
 
-        public VehicleType Type
+        public abstract VehicleType Type
         {
-            get; private set;
+            get; 
         }
 
         public abstract int Wheels { get; }
