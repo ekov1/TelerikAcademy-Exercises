@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Dealership.Models
 {
-    class Motorcycle : Vehicle, IMotorcycle, IVehicle
+    public class Motorcycle : Vehicle, IMotorcycle, IVehicle
     {
         private string category;
 
