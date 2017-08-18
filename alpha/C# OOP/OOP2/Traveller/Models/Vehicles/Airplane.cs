@@ -14,6 +14,12 @@ namespace Traveller.Models.Vehicles
         private int passangerCapacity;
 
         // Constructors
+        public Airplane(int passengerCapacity, decimal pricePerKilometer, bool hasFreeFood)
+            : base(pricePerKilometer)
+        {
+            this.PassangerCapacity = passangerCapacity;
+            this.HasFreeFood = hasFreeFood;
+        }
 
         // Properties
         public bool HasFreeFood
