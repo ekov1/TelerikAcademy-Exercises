@@ -1,7 +1,12 @@
-﻿namespace Traveller.Models.Vehicles.Contracts
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Traveller.Models.Vehicles.Contracts
 {
-    public interface IBus
+    public interface IBus : IVehicle
     {
-        
     }
 }

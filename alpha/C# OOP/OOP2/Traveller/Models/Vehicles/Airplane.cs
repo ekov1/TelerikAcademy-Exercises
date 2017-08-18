@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Traveller.Enums;
+﻿using Traveller.Enums;
 using Traveller.Models.Vehicles.Contracts;
 
 namespace Traveller.Models.Vehicles
 {
-    public class Airplane : Vehicle, IAirplane
+    public class Airplane : Vehicle, IAirplane, IVehicle
     {
         // Fields
         private int passangerCapacity;

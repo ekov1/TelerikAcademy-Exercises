@@ -1,42 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Traveller.Enums;
 using Traveller.Models.Vehicles.Contracts;
 
 namespace Traveller.Models.Vehicles
 {
-    public class Train : Vehicle, ITrain, IVehicle
+    public class Bus : Vehicle, IBus, IVehicle
     {
         // Fields
-        private int carts;
         private int passangerCapacity;
 
         // Constructors
-        public Train(int passengerCapacity, decimal pricePerKilometer, int carts)
+        public Bus(int passengerCapacity, decimal pricePerKilometer)
             : base(pricePerKilometer)
         {
             this.PassangerCapacity = passangerCapacity;
-            this.Carts = carts;
         }
 
         // Properties
-        public int Carts
-        {
-            get
-            {
-                return this.carts;
-            }
-
-            set
-            {
-                if (value < 1 || value > 15)
-                {
-                    throw new ArgumentException("A train cannot have less than 1 cart or more than 15 carts.");
-                }
-
-                this.carts = value;
-            }
-        }
-
         public override int PassangerCapacity
         {
             get
@@ -48,10 +32,10 @@ namespace Traveller.Models.Vehicles
             {
                 ValidatePassangerCapacity(value);
 
-                if (value < 30 || value > 150)
+                if (value < 10 || value > 50)
                 {
                     throw new ArgumentException(
-                        "A train cannot have less than 30 passengers or more than 150 passengers.");
+                        "A bus cannot have less than 10 passengers or more than 50 passengers.");
                 }
 
                 this.passangerCapacity = value;

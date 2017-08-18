@@ -24,7 +24,7 @@ namespace Traveller.Core.Factories
 
         public IBus CreateBus(int passengerCapacity, decimal pricePerKilometer)
         {
-            throw new NotImplementedException("You are invoking a TravellerFactory method that is not yet implemented!");
+            return new Bus(passengerCapacity, pricePerKilometer);
         }
 
         public IAirplane CreateAirplane(int passengerCapacity, decimal pricePerKilometer, bool hasFreeFood)
