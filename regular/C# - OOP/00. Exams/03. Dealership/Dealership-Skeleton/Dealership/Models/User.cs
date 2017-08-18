@@ -25,6 +25,7 @@ namespace Dealership.Models
             this.LastName = lastName;
             this.Password = password;
             this.Role = role;
+            this.Vehicles = new List<IVehicle>();
         }
 
         // Properties
@@ -116,28 +117,42 @@ namespace Dealership.Models
             get; private set;
         }
 
+
         // Methods
         public void AddComment(IComment commentToAdd, IVehicle vehicleToAddComment)
         {
-            throw new NotImplementedException();
+            vehicleToAddComment.Comments.Add(commentToAdd);
         }
 
         public void AddVehicle(IVehicle vehicle)
         {
-            throw new NotImplementedException();
-        }
+            bool isAdmin = this.Role == Role.Admin;
+            bool canAddMoreVehicles = this.Role == Role.VIP || this.Vehicles.Count == 5;
 
-        public string PrintVehicles()
-        {
-            throw new NotImplementedException();
+            if (isAdmin || !canAddMoreVehicles)
+            {
+                return;
+            }
         }
 
         public void RemoveComment(IComment commentToRemove, IVehicle vehicleToRemoveComment)
         {
-            throw new NotImplementedException();
+            if (commentToRemove.Author == this.Username
+                && vehicleToRemoveComment.Comments.Contains(commentToRemove))
+            {
+                vehicleToRemoveComment.Comments.Remove(commentToRemove);
+            }
         }
 
         public void RemoveVehicle(IVehicle vehicle)
+        {
+            if (this.Vehicles.Contains(vehicle))
+            {
+                this.Vehicles.Remove(vehicle);
+            }
+        }
+
+        public string PrintVehicles()
         {
             throw new NotImplementedException();
         }

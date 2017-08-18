@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Dealership.Models
 {
-    public abstract class Vehicle : IVehicle
+    public abstract class Vehicle : IVehicle, ICommentable
     {
         private int wheels;
         private VehicleType type;
@@ -103,7 +103,7 @@ namespace Dealership.Models
 
         public abstract VehicleType Type
         {
-            get; 
+            get;
         }
 
         public abstract int Wheels { get; }

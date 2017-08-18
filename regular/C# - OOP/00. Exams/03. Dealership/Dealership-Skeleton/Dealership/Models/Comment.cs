@@ -41,5 +41,13 @@ namespace Dealership.Models
                 this.content = value;
             }
         }
+
+        public override string ToString()
+        {
+            return string.Format(@"----------
+    {0}
+       User: {1} {2}
+----------", this.Content, this.Author);
+        }
     }
 }

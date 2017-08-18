@@ -22,14 +22,17 @@ namespace Dealership.Factories
             return new Truck(make, model, price, weightCapacity);
         }
 
-        public IUser CreateUser(string username, string firstName, string lastName, string password, string role)
+        public IUser CreateUser(string userName, string firstName, string lastName, string password, string role)
         {
-            // TODO: Implement this
+            Role finalRole = Role.Normal;
+            Enum.TryParse(role, out finalRole);
+
+            return new User(userName, firstName, lastName, password, finalRole);
         }
 
         public IComment CreateComment(string content)
         {
-            // TODO: Implement this
+            return new Comment(content);
         }
     }
 }
