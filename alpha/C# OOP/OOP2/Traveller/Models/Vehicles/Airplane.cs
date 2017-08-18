@@ -13,13 +13,12 @@ namespace Traveller.Models.Vehicles
         // Fields
         private int passangerCapacity;
 
+        // Constructors
+
         // Properties
         public bool HasFreeFood
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get; private set;
         }
 
         public override int PassangerCapacity
@@ -41,7 +40,7 @@ namespace Traveller.Models.Vehicles
         {
             get
             {
-                throw new NotImplementedException();
+                return VehicleType.Air;
             }
         }
     }
