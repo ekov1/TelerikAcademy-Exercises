@@ -50,7 +50,7 @@ namespace Traveller.Models.Vehicles
         {
             if (value < 1 || value > 800)
             {
-                throw new ArgumentException(
+                throw new ArgumentOutOfRangeException(
                     "A vehicle with less than 1 passengers or more than 800 passengers cannot exist!");
             }
         }

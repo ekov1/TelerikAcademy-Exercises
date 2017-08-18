@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Traveller.Enums;
 using Traveller.Models.Vehicles.Contracts;
 
@@ -34,7 +30,7 @@ namespace Traveller.Models.Vehicles
 
                 if (value < 10 || value > 50)
                 {
-                    throw new ArgumentException(
+                    throw new ArgumentOutOfRangeException(
                         "A bus cannot have less than 10 passengers or more than 50 passengers.");
                 }
 

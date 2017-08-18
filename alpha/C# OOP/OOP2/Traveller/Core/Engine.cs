@@ -43,7 +43,7 @@ namespace Traveller.Core
         public IParser Parser { get; set; }
 
         public IList<IVehicle> Vehicles { get; private set; }
-        
+
         public IList<IJourney> Journeys { get; private set; }
 
         public IList<ITicket> Tickets { get; private set; }
@@ -66,7 +66,7 @@ namespace Traveller.Core
                 catch (Exception ex)
                 {
                     this.Writer.WriteLine(ex.Message);
-                    this.Writer.WriteLine("####################");
+                    // this.Writer.WriteLine("####################");
                 }
             }
         }
@@ -83,7 +83,7 @@ namespace Traveller.Core
 
             var executionResult = command.Execute(parameters);
             this.Writer.WriteLine(executionResult);
-            this.Writer.WriteLine("####################");
+            // this.Writer.WriteLine("####################");
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Traveller.Models.Vehicles
             {
                 if (value < 1 || value > 15)
                 {
-                    throw new ArgumentException("A train cannot have less than 1 cart or more than 15 carts.");
+                    throw new ArgumentOutOfRangeException("A train cannot have less than 1 cart or more than 15 carts.");
                 }
 
                 this.carts = value;
@@ -50,7 +50,7 @@ namespace Traveller.Models.Vehicles
 
                 if (value < 30 || value > 150)
                 {
-                    throw new ArgumentException(
+                    throw new ArgumentOutOfRangeException(
                         "A train cannot have less than 30 passengers or more than 150 passengers.");
                 }
 
