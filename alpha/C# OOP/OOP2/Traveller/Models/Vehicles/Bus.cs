@@ -45,5 +45,14 @@ namespace Traveller.Models.Vehicles
                 return VehicleType.Land;
             }
         }
+
+        // Methods
+        public override string ToString()
+        {
+            return string.Format(@"Bus ----
+Passenger capacity: {0}
+Price per kilometer: {1}
+Vehicle type: {2}", this.PassangerCapacity, this.PricePerKilometer, this.Type);
+        }
     }
 }

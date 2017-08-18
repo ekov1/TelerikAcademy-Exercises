@@ -44,5 +44,14 @@ namespace Traveller.Models.Vehicles
                 return VehicleType.Air;
             }
         }
+        // Methods
+        public override string ToString()
+        {
+            return string.Format(@"Airplane ----
+Passenger capacity: {0}
+Price per kilometer: {1}
+Vehicle type: {2}
+Has free food: {3}", this.PassangerCapacity, this.PricePerKilometer, this.Type, this.HasFreeFood);
+        }
     }
 }

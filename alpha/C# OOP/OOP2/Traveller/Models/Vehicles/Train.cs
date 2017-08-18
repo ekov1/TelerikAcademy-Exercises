@@ -26,7 +26,7 @@ namespace Traveller.Models.Vehicles
                 return this.carts;
             }
 
-            set
+            private set
             {
                 if (value < 1 || value > 15)
                 {
@@ -64,6 +64,16 @@ namespace Traveller.Models.Vehicles
             {
                 return VehicleType.Land;
             }
+        }
+
+        // Methods
+        public override string ToString()
+        {
+            return string.Format(@"Train ----
+Passenger capacity: {0}
+Price per kilometer: {1}
+Vehicle type: {2}
+Carts amount: {3}", this.PassangerCapacity, this.PricePerKilometer, this.Type, this.Carts);
         }
     }
 }
