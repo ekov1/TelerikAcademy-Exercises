@@ -31,7 +31,7 @@ namespace Traveller.Models.Vehicles
 
             set
             {
-                ValidatePassangerCapacity(value);
+               // ValidatePassangerCapacity(value);
 
                 this.passangerCapacity = value;
             }

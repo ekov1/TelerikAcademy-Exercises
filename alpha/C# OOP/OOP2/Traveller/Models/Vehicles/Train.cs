@@ -46,7 +46,7 @@ namespace Traveller.Models.Vehicles
 
             set
             {
-                ValidatePassangerCapacity(value);
+                // ValidatePassangerCapacity(value);
 
                 if (value < 30 || value > 150)
                 {
