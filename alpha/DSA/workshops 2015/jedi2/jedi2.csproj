@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{13B60F4F-FDEF-4E00-93F4-F5A3BC95A5C7}</ProjectGuid>
+    <ProjectGuid>{8AF37E8C-93EC-4AF2-BB65-0EC83447185A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>jediMeditaion</RootNamespace>
-    <AssemblyName>jediMeditaion</AssemblyName>
+    <RootNamespace>jedi2</RootNamespace>
+    <AssemblyName>jedi2</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="jediMeditaion.cs" />
+    <Compile Include="jedi2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
