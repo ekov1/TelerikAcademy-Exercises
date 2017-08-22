@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jediMeditaion", "jediMedita
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jedi2", "jedi2\jedi2.csproj", "{8AF37E8C-93EC-4AF2-BB65-0EC83447185A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fibonacci", "fibonacci\fibonacci.csproj", "{A76EF5E0-5493-4E9B-A81B-AE3FC84FB2E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8AF37E8C-93EC-4AF2-BB65-0EC83447185A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AF37E8C-93EC-4AF2-BB65-0EC83447185A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AF37E8C-93EC-4AF2-BB65-0EC83447185A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A76EF5E0-5493-4E9B-A81B-AE3FC84FB2E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A76EF5E0-5493-4E9B-A81B-AE3FC84FB2E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A76EF5E0-5493-4E9B-A81B-AE3FC84FB2E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A76EF5E0-5493-4E9B-A81B-AE3FC84FB2E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
