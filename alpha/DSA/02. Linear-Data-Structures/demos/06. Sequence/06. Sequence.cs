@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _06.Sequence
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = 3;
+            int p = 16;
+
+            Queue<int> queue = new Queue<int>();
+
+            queue.Enqueue(n);
+
+            Console.WriteLine("n = {0}", n);
+            Console.WriteLine("p = {0}", p);
+            Console.WriteLine("sequence: ");
+
+            int index = 0;
+
+            while (queue.Count > 0)
+            {
+                int current = queue.Dequeue();
+                Console.Write(" {0}", current);
+                index++;
+
+                if (current == p)
+                {
+                    Console.WriteLine();
+                    Console.Write("Index = {0} (starting from 1)", index);
+                    return;
+                }
+
+                queue.Enqueue(current + 1);
+                queue.Enqueue(2 * current);
+            }
+        }
+    }
+}
