@@ -3,25 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
-namespace fibonacci
+namespace Fibonacci_memo
 {
-    class fibonacci
+    class Program
     {
-        static int n = 100000;
-        static int[] memo = new int[n];
+        const int MOD = 1000000007;
+        static int[] memo;
+
         static void Main(string[] args)
         {
-            Stopwatch stopwatch = new Stopwatch();
+            int n = int.Parse(Console.ReadLine());
+            memo = new int[n + 1];
 
-            for (int i = 0; i < n; i++)
-            {
-                stopwatch.Start();
-                Console.Write("Fibonacci " + i + " : " + Fibonacci(i) + " ");
-                Console.WriteLine(stopwatch.ElapsedMilliseconds / 1000 + " seconds passed");
-                //  Console.WriteLine(stopwatch.ElapsedMilliseconds  + " milliseconds passed");
-            }
+            Console.WriteLine(Fibonacci(n));
         }
 
         static int Fibonacci(int n)
@@ -42,8 +37,9 @@ namespace fibonacci
             }
 
             int number = Fibonacci(n - 1) + Fibonacci(n - 2);
-          //  number %= 1000000007;
+            number %= MOD;
             memo[n] = number;
+
             return number;
         }
     }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. List Simple Example", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. MatchingBrackets", "03. MatchingBrackets\03. MatchingBrackets.csproj", "{86ADEAE5-3B57-4BF7-B19A-6C4255CB041F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. PrimesInInterval", "04. PrimesInInterval\04. PrimesInInterval.csproj", "{2C2F3E26-1702-461D-AEAF-CB16DB2AB73A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{86ADEAE5-3B57-4BF7-B19A-6C4255CB041F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86ADEAE5-3B57-4BF7-B19A-6C4255CB041F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86ADEAE5-3B57-4BF7-B19A-6C4255CB041F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C2F3E26-1702-461D-AEAF-CB16DB2AB73A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C2F3E26-1702-461D-AEAF-CB16DB2AB73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C2F3E26-1702-461D-AEAF-CB16DB2AB73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C2F3E26-1702-461D-AEAF-CB16DB2AB73A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
