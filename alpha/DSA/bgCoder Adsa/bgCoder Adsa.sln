@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player ranking", "Player ranking\Player ranking.csproj", "{EB3985AD-09CA-4D77-8DAF-0891216CFDAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards", "Guards\Guards.csproj", "{57A44177-7F1E-4F5C-A403-F796DB3006D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conference", "Conference\Conference.csproj", "{E89EE666-DE2E-48C4-A6BB-68CB36BBF18A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB3985AD-09CA-4D77-8DAF-0891216CFDAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB3985AD-09CA-4D77-8DAF-0891216CFDAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB3985AD-09CA-4D77-8DAF-0891216CFDAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB3985AD-09CA-4D77-8DAF-0891216CFDAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57A44177-7F1E-4F5C-A403-F796DB3006D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57A44177-7F1E-4F5C-A403-F796DB3006D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57A44177-7F1E-4F5C-A403-F796DB3006D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57A44177-7F1E-4F5C-A403-F796DB3006D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E89EE666-DE2E-48C4-A6BB-68CB36BBF18A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E89EE666-DE2E-48C4-A6BB-68CB36BBF18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E89EE666-DE2E-48C4-A6BB-68CB36BBF18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E89EE666-DE2E-48C4-A6BB-68CB36BBF18A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

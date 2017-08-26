@@ -17,11 +17,8 @@ namespace _06
         {
             List<int> numbers = new List<int> { 4, 2, 2, 5, 2, 3, 2, 3, 1, 5, 2 };
             List<int> odd = new List<int>();
-            List<int> found = new List<int>();
-
             int counter = 0;
             int numToCeck;
-
 
             foreach (var number in numbers)
             {
