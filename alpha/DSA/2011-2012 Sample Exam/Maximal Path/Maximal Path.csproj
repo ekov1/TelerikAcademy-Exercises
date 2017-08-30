@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E89EE666-DE2E-48C4-A6BB-68CB36BBF18A}</ProjectGuid>
+    <ProjectGuid>{319FE0D0-5180-4CE2-801E-75A01E1D3AF6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Conference</RootNamespace>
-    <AssemblyName>Conference</AssemblyName>
+    <RootNamespace>Maximal_Path</RootNamespace>
+    <AssemblyName>Maximal Path</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conference.cs" />
+    <Compile Include="Maximal Path.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

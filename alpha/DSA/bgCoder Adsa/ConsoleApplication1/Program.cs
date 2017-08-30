@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Conference
+namespace ConsoleApplication1
 {
     class Program
     {
         static void Main(string[] args)
         {
+            long a = 0;
+            Console.WriteLine(a+int.MaxValue);
         }
     }
 }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guards", "Guards\Guards.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conference", "Conference\Conference.csproj", "{E89EE666-DE2E-48C4-A6BB-68CB36BBF18A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{92354668-95B4-4D7B-8DA0-F50F0CC7D080}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E89EE666-DE2E-48C4-A6BB-68CB36BBF18A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E89EE666-DE2E-48C4-A6BB-68CB36BBF18A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E89EE666-DE2E-48C4-A6BB-68CB36BBF18A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92354668-95B4-4D7B-8DA0-F50F0CC7D080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92354668-95B4-4D7B-8DA0-F50F0CC7D080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92354668-95B4-4D7B-8DA0-F50F0CC7D080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92354668-95B4-4D7B-8DA0-F50F0CC7D080}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

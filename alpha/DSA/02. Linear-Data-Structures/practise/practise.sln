@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Static List", "Static List\Static List.csproj", "{A07011CA-F242-4765-9CE5-220251683C7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicList", "DynamicList\DynamicList.csproj", "{4757D5F9-BAC4-4E2A-9076-C56B349F1F61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A07011CA-F242-4765-9CE5-220251683C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A07011CA-F242-4765-9CE5-220251683C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A07011CA-F242-4765-9CE5-220251683C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4757D5F9-BAC4-4E2A-9076-C56B349F1F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4757D5F9-BAC4-4E2A-9076-C56B349F1F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4757D5F9-BAC4-4E2A-9076-C56B349F1F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4757D5F9-BAC4-4E2A-9076-C56B349F1F61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

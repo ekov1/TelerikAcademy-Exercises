@@ -10,7 +10,7 @@ namespace _09.UnionIntersect
     {
         public static void Main()
         {
-            int[] firstArray = { 1, 2, 3, 4, 5 };
+            int[] firstArray = { 1, 2, 23, 3, 4, 5 };
             Console.Write("First Array = ");
             PrintArray(firstArray);
 
