@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 
 namespace RosettaChaosGame
@@ -11,30 +12,29 @@ namespace RosettaChaosGame
 
         static void Main(string[] args)
         {
-            var bm = new Bitmap(1200, 1200);
+            var bm = new Bitmap(4800, 4800);
 
             var referencePoints = new Point[] {
-                new Point(0, 1200),
-                new Point(1200, 1200),
-                new Point(600, 162)
+                new Point(0, 4800),
+                new Point(4800, 4800),
+                new Point(2400, 648)
             };
+
             var r = new System.Random();
-            var p = new Point(r.Next(1200), r.Next(1200));
-            for (int count = 0; count < 1000000; count++)
+            var p = new Point(r.Next(4800), r.Next(4800));
+
+            for (int count = 0; count < 100000000; count++)
             {
-                bm.SetPixel(p.X, p.Y, Color.Turquoise);
-                //if (count % 2 == 0)
-                //{
-                //    bm.SetPixel(p.X, p.Y, Color.Gold);
-                //}
+                Console.CursorVisible = false;
+                Console.SetCursorPosition(0, 0);
+                Console.WriteLine("Drawing the image. Please wait . . .");
+
+                bm.SetPixel(p.X, p.Y, Color.DodgerBlue);
                 int i = r.Next(3);
                 p.X = (p.X + referencePoints[i].X) / 2;
                 p.Y = (p.Y + referencePoints[i].Y) / 2;
-                //p.X = (p.X + referencePoints[i].X) / 3;
-                //p.Y = (p.Y + referencePoints[i].Y) / 3;
-                //p.X = (p.X + referencePoints[i].X) / 2;
-                //p.Y = (p.Y + referencePoints[i].Y) / 4;
             }
+
             const string filename = "Chaos Game.png";
             bm.Save(filename);
             Process.Start(filename);
