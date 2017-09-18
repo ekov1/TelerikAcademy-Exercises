@@ -17,11 +17,10 @@ namespace Academy.Core
         private readonly StringBuilder builder = new StringBuilder();
 
         // private because of Singleton design pattern
-        private Engine()
+        private Engine(IReader reader, IWriter writer)
         {
-            this.Reader = new ConsoleReader();
-            this.Writer = new ConsoleWriter();
-            this.Parser = new CommandParser();
+            this.Reader = reader;
+            this.Writer = writer;
 
             this.Seasons = new List<ISeason>();
             this.Students = new List<IStudent>();

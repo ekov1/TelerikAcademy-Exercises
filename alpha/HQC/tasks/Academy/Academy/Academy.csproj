@@ -46,7 +46,9 @@
     <Compile Include="Commands\Adding\AddStudentToCourseCommand.cs" />
     <Compile Include="Commands\Adding\AddStudentToSeasonCommand.cs" />
     <Compile Include="Commands\Adding\AddTrainerToSeasonCommand.cs" />
+    <Compile Include="Commands\CommandsProcessor.cs" />
     <Compile Include="Commands\Contracts\ICommand.cs" />
+    <Compile Include="Commands\Contracts\ICommandsProcessor.cs" />
     <Compile Include="Commands\Creating\CreateCourseCommand.cs" />
     <Compile Include="Commands\Creating\CreateCourseResultCommand.cs" />
     <Compile Include="Commands\Creating\CreateLectureCommand.cs" />
