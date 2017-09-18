@@ -1,22 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Tasker.Core.Contracts;
 using Tasker.Core.Providers;
 using Tasker.Models;
 
 namespace Tasker.Core
 {
-    public class TaskManager
+    public class TaskManager : ITaskManager
     {
+        // Fields
         // private IList<Task> tasks;
-        private ICollection<Task> tasks;
-        private IdProvider idProvider;
-        public TaskManager()
+        private readonly ICollection<ITask> tasks;
+        private readonly IIdProvider idProvider;
+        private readonly ILogger logger;
+
+        // Constructors
+        public TaskManager(IIdProvider idProvider, ILogger logger)
         {
-            this.tasks = new List<Task>();
-            this.idProvider = new IdProvider();
+            this.tasks = new List<ITask>();
+            this.idProvider = idProvider;
+            this.logger = logger;
         }
-        public void Add(Task task)
+
+        // Methods
+        public void Add(ITask task)
         {
 
             if (task == null)
@@ -26,7 +34,7 @@ namespace Tasker.Core
 
             task.Id = this.idProvider.NextId();
             this.tasks.Add(task);
-            Console.WriteLine("A new task was added!");
+            this.logger.Log("A new task was added!");
         }
 
         public void Remove(int id)
@@ -36,12 +44,12 @@ namespace Tasker.Core
 
             if (task == null)
             {
-                Console.WriteLine($"The task with ID {id} was not found!");
+               this.logger.Log($"The task with ID {id} was not found!");
             }
             else
             {
                 this.tasks.Remove(task);
-                Console.WriteLine($"The task with ID {id} was removed!");
+                this.logger.Log($"The task with ID {id} was removed!");
             }
         }
     }

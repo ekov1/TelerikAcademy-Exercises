@@ -1,4 +1,5 @@
 ﻿using Tasker.Core;
+using Tasker.Core.Providers;
 using Tasker.Models;
 
 namespace Tasker
@@ -7,10 +8,7 @@ namespace Tasker
     {
         static void Main(string[] args)
         {
-            var manger = new TaskManager();
-            var task = new Task("Some task");
-
-            manger.Add(task);
+          
         }
     }
 }
