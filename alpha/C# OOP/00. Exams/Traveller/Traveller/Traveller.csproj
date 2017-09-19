@@ -68,6 +68,7 @@
     <Compile Include="Models\Vehicles\Contracts\IAirplane.cs" />
     <Compile Include="Models\Vehicles\Contracts\IBus.cs" />
     <Compile Include="Models\Vehicles\Contracts\ITrain.cs" />
+    <Compile Include="Models\Vehicles\Vehicle.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
