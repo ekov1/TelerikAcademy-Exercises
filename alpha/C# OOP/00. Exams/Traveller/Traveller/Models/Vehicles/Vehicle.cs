@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Traveller.Models.Enums;
 using Traveller.Models.Vehicles.Contracts;
 
 namespace Traveller.Models.Vehicles
@@ -17,6 +15,7 @@ namespace Traveller.Models.Vehicles
         public Vehicle(int passangerCapacity, decimal pricePerKilometer)
         {
             this.PassangerCapacity = passangerCapacity;
+            this.PricePerKilometer = pricePerKilometer;
         }
 
         // Properties
@@ -49,10 +48,11 @@ namespace Traveller.Models.Vehicles
                 {
                     throw new ArgumentOutOfRangeException("A vehicle with a price per kilometer lower than $0.10 or higher than $2.50 cannot exist!");
                 }
+                this.pricePerKilometer = value;
             }
         }
 
-        public abstract Vehicletype Type { get; }
+        public abstract VehicleType Type { get; }
 
         protected abstract string VehicleName { get; }
 
