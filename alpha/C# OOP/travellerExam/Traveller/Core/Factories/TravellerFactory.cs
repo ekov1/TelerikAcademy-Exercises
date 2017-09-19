@@ -1,7 +1,6 @@
 ﻿using System;
 using Traveller.Core.Contracts;
 using Traveller.Models.Contracts;
-using Traveller.Models.Vehicles;
 using Traveller.Models.Vehicles.Contracts;
 
 namespace Traveller.Core.Factories
@@ -21,22 +20,22 @@ namespace Traveller.Core.Factories
                 return instanceHolder;
             }
         }
-
+        
         public IBus CreateBus(int passengerCapacity, decimal pricePerKilometer)
         {
-            return new Bus(passengerCapacity, pricePerKilometer);
+            throw new NotImplementedException("You are invoking a TravellerFactory method that is not yet implemented!");
         }
 
         public IAirplane CreateAirplane(int passengerCapacity, decimal pricePerKilometer, bool hasFreeFood)
         {
-            return new Airplane(passengerCapacity, pricePerKilometer, hasFreeFood);
+            throw new NotImplementedException("You are invoking a TravellerFactory method that is not yet implemented!");
         }
 
         public ITrain CreateTrain(int passengerCapacity, decimal pricePerKilometer, int carts)
         {
-            return new Train(passengerCapacity, pricePerKilometer, carts);
+            throw new NotImplementedException("You are invoking a TravellerFactory method that is not yet implemented!");
         }
-
+        
         public IJourney CreateJourney(string startLocation, string destination, int distance, IVehicle vehicle)
         {
             throw new NotImplementedException("You are invoking a TravellerFactory method that is not yet implemented!");

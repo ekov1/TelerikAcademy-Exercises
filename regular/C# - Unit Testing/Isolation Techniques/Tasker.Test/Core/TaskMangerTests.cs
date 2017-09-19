@@ -17,11 +17,30 @@ namespace Tasker.Test.Core
             var taskStub = new Mock<ITask>();
 
             var manager = new TaskManager(idProviderStub.Object, loggerMock.Object);
-            var list = new List();
 
             // Act
             manager.Add(taskStub.Object);
+
             // Assert
+            loggerMock.Verify(x => x.Log(It.IsAny<string>()), Times.Once);
+        }
+
+        [Test]
+        public void Add_ShouldCorrectlyAssigntaskIds_WhenValidTaskIsProvided()
+        {
+            // Arange
+            var idProviderStub = new Mock<IIdProvider>();
+            var loggerStub = new Mock<ILogger>();
+            var taskMock = new Mock<ITask>();
+
+            idProviderStub.Setup(x => x.NextId()).Returns(0);
+            var manager = new TaskManager(idProviderStub.Object, loggerStub.Object);
+
+            // Act
+            manager.Add(taskStub.Object);
+
+            // Assert
+            loggerMock.Verify(x => x.Log(It.IsAny<string>()), Times.Once);
         }
     }
 }

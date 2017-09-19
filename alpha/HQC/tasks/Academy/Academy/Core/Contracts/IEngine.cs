@@ -7,13 +7,6 @@ namespace Academy.Core.Contracts
     {
         void Start();
 
-        IReader Reader { get; set; }
-
-        IWriter Writer { get; set; }
-
-        IParser Parser { get; set; }
-
-
         IList<ISeason> Seasons { get;  }
 
         IList<IStudent> Students { get; }

@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Traveller.Enums
+namespace Traveller.Commands.Creating
 {
-    public enum VehicleType
+    // TODO
+    class CreateAirplaneCommand
     {
-        Land,
-        Air,
-        Sea
     }
 }

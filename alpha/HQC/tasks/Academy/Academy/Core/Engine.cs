@@ -1,4 +1,5 @@
-﻿using Academy.Core.Contracts;
+﻿using Academy.Commands.Contracts;
+using Academy.Core.Contracts;
 using Academy.Core.Providers;
 using Academy.Models.Contracts;
 using System;
@@ -16,11 +17,17 @@ namespace Academy.Core
         private const string NullProvidersExceptionMessage = "cannot be null.";
         private readonly StringBuilder builder = new StringBuilder();
 
-        // private because of Singleton design pattern
-        private Engine(IReader reader, IWriter writer)
+        // Fields
+        private readonly IReader reader;
+        private readonly IWriter writer;
+        private readonly ICommandsProcessor commandsProcessor;
+
+        // Constructors
+        public Engine(IReader reader, IWriter writer, ICommandsProcessor commandsProcessor)
         {
-            this.Reader = reader;
-            this.Writer = writer;
+            this.reader = reader;
+            this.writer = writer;
+            this.commandsProcessor = commandsProcessor;
 
             this.Seasons = new List<ISeason>();
             this.Students = new List<IStudent>();
@@ -36,12 +43,6 @@ namespace Academy.Core
         }
 
         // Property dependencty injection not validated for simplicity
-        public IReader Reader { get; set; }
-
-        public IWriter Writer { get; set; }
-
-        public IParser Parser { get; set; }
-
 
         public IList<ISeason> Seasons { get; private set; }
 
@@ -56,15 +57,15 @@ namespace Academy.Core
             {
                 try
                 {
-                    var commandAsString = this.Reader.ReadLine();
+                    var commandAsString = this.reader.ReadLine();
 
                     if (commandAsString == TerminationCommand)
                     {
-                        this.Writer.Write(this.builder.ToString());
+                        this.writer.Write(this.builder.ToString());
                         break;
                     }
 
-                    this.ProcessCommand(commandAsString);
+                    this.commandsProcessor.ProcessCommand(commandAsString);
                 }
                 catch (ArgumentOutOfRangeException ex)
                 {
@@ -75,20 +76,6 @@ namespace Academy.Core
                     this.builder.AppendLine(ex.Message);
                 }
             }
-        }
-
-        private void ProcessCommand(string commandAsString)
-        {
-            if (string.IsNullOrWhiteSpace(commandAsString))
-            {
-                throw new ArgumentNullException("Command cannot be null or empty.");
-            }
-
-            var command = this.Parser.ParseCommand(commandAsString);
-            var parameters = this.Parser.ParseParameters(commandAsString);
-
-            var executionResult = command.Execute(parameters);
-            this.builder.AppendLine(executionResult);
         }
     }
 }

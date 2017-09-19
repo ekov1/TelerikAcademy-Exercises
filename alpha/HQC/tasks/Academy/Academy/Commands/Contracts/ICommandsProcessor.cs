@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Academy.Commands.Contracts
 {
-    interface ICommandsProcessor
+    public interface ICommandsProcessor
     {
         string ProcessCommand(string commandAsString);
     }

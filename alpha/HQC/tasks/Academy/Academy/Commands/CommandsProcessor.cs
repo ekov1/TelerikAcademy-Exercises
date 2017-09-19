@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Academy.Commands
 {
-    class CommandsProcessor : ICommandsProcessor
+    public class CommandsProcessor : ICommandsProcessor
     {
         // Fields
         private readonly IParser parser;
@@ -33,7 +33,6 @@ namespace Academy.Commands
             var resultOfExecution = command.Execute(commandParams);
 
             return resultOfExecution;
-
         }
     }
 }

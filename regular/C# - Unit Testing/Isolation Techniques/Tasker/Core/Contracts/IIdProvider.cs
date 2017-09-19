@@ -3,6 +3,5 @@
     public interface IIdProvider
     {
         int NextId();
-
     }
 }

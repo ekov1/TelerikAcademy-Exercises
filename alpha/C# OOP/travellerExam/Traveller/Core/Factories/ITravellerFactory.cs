@@ -5,10 +5,8 @@ namespace Traveller.Core.Contracts
 {
     public interface ITravellerFactory
     {
-        IAirplane CreateAirplane(int passengerCapacity, decimal pricePerKilometer, bool hasFreeFood);
-
         IBus CreateBus(int passengerCapacity, decimal pricePerKilometer);
-
+        
         ITrain CreateTrain(int passengerCapacity, decimal pricePerKilometer, int carts);
 
         IJourney CreateJourney(string startingLocation, string destination, int distance, IVehicle vehicle);
