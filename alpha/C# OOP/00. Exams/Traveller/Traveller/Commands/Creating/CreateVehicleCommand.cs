@@ -6,14 +6,14 @@ using Traveller.Models.Vehicles.Contracts;
 
 namespace Traveller.Commands.Creating
 {
-    public abstract class CreatevehicleCommand : ICommand
+    public abstract class CreateVehicleCommand : ICommand
     {
         // Fields
         protected readonly ITravellerFactory factory;
         protected readonly IEngine engine;
 
         // Constructors
-        public CreatevehicleCommand(ITravellerFactory factory, IEngine engine)
+        public CreateVehicleCommand(ITravellerFactory factory, IEngine engine)
         {
             this.factory = factory;
             this.engine = engine;
@@ -24,7 +24,11 @@ namespace Traveller.Commands.Creating
 
         public string Execute(IList<string> parameters)
         {
-            throw new NotImplementedException();
+            IVehicle vehicle = this.CreateVehicle(parameters);
+
+            this.engine.Vehicles.Add(vehicle);
+
+            return $"Vehicle with ID {engine.Vehicles.Count - 1} was created.";
         }
     }
 }
