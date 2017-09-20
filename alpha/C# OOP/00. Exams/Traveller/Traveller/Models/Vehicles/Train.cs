@@ -51,6 +51,22 @@ namespace Traveller.Models.Vehicles
             }
         }
 
+        public override int PassangerCapacity
+        {
+            get
+            {
+                return this.passangerCapacity;
+            }
+            protected set
+            {
+                if (value < Constants.TrainMinPassangers || value > Constants.TrainMaxPassangers)
+                {
+                    throw new ArgumentOutOfRangeException($"A train cannot have less than {Constants.TrainMinPassangers} passengers or more than {Constants.TrainMaxPassangers} passengers.");
+                }
+                this.passangerCapacity = value;
+            }
+        }
+
         // Methods
         public override string ToString()
         {

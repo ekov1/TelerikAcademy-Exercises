@@ -66,6 +66,8 @@
     <Compile Include="Models\Contracts\IJourney.cs" />
     <Compile Include="Models\Contracts\ITicket.cs" />
     <Compile Include="Models\Enums\VehicleType.cs" />
+    <Compile Include="Models\Vehicles\Airplane.cs" />
+    <Compile Include="Models\Vehicles\Bus.cs" />
     <Compile Include="Models\Vehicles\Contracts\IVehicle.cs" />
     <Compile Include="Models\Vehicles\Contracts\IAirplane.cs" />
     <Compile Include="Models\Vehicles\Contracts\IBus.cs" />
