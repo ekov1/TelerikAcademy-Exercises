@@ -67,6 +67,7 @@
     <Compile Include="Models\Contracts\ITicket.cs" />
     <Compile Include="Models\Enums\VehicleType.cs" />
     <Compile Include="Models\Travel\Journey.cs" />
+    <Compile Include="Models\Travel\Ticket.cs" />
     <Compile Include="Models\Vehicles\Airplane.cs" />
     <Compile Include="Models\Vehicles\Bus.cs" />
     <Compile Include="Models\Vehicles\Contracts\IVehicle.cs" />
