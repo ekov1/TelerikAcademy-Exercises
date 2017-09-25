@@ -11,16 +11,18 @@ namespace CountLuck
         // variables
         static char[,] maze;
         static bool[,] visited;
+        static int k;
         static int n;
         static int m;
 
+        static int movesCounter = 0;
         static int startingRow;
         static int startingCol;
 
         // main
         static void Main(string[] args)
         {
-            int k = int.Parse(Console.ReadLine()); // rons guess
+            k = int.Parse(Console.ReadLine()); // rons guess
             int[] nm = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
             n = nm[0];
             m = nm[1];
@@ -37,11 +39,23 @@ namespace CountLuck
         // methods
         private static void WalkMaze()
         {
-            CheckNeighbourCells();
+            while (maze[startingRow, startingCol] != '*')
+            {
+                CheckNeighbourCells();
+            }
+            if (movesCounter == k)
+            {
+                Console.WriteLine("Impressed");
+            }
+            else
+            {
+                Console.WriteLine("Oops!");
+            }
         }
 
         private static void CheckNeighbourCells()
         {
+
             // check Left
             if (startingCol > 0)
             {
@@ -49,6 +63,7 @@ namespace CountLuck
                 {
                     visited[startingRow, startingCol] = true;
                     startingCol--;
+                    movesCounter++;
                 }
             }
 
@@ -59,6 +74,7 @@ namespace CountLuck
                 {
                     visited[startingRow, startingCol] = true;
                     startingCol++;
+                    movesCounter++;
                 }
             }
 
@@ -69,6 +85,7 @@ namespace CountLuck
                 {
                     visited[startingRow, startingCol] = true;
                     startingRow--;
+                    movesCounter++;
                 }
             }
 
@@ -79,8 +96,10 @@ namespace CountLuck
                 {
                     visited[startingRow, startingCol] = true;
                     startingRow--;
+                    movesCounter++;
                 }
             }
+
         }
 
         private static void CreateMazeFromInput()
@@ -111,7 +130,5 @@ namespace CountLuck
                 Console.WriteLine();
             }
         }
-
-
     }
 }
