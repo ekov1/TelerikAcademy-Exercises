@@ -1,0 +1,90 @@
+.container{
+    font-family: 'Calibri';
+    color: #2d2d2d;
+    border: 1px solid #D5DBE7;
+    border-radius: 15px;
+    border-collapse: collapse;
+}
+
+td{
+    padding: 4px;
+}
+
+input{
+    position: relative;
+    width: 80%;
+}
+
+.image-icon{
+    display:inline-block;
+    vertical-align: middle;
+    border: 1px solid #C3C7CC;
+    border-radius: 3px;
+    display: inline-block;
+    width:20px;
+    height:20px;
+}
+
+.icon-div{
+    background: url('./icon.png');
+}
+
+.skip-right{
+    background: url('./skipRight.png');
+}
+
+.skip-left{
+    background: url('./skipLeft.png');
+}
+
+.right-pointer{
+    background: url('./rightPointer.png');
+}
+
+.left-pointer{
+    background: url('./leftPointer.png');
+}
+
+.first-row{
+    background-color: #E7E9EB;
+}
+
+.second-row{
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3f3f5+0,dce0e4+100 */
+background: #f3f3f5; /* Old browsers */
+background: -moz-linear-gradient(top,  #f3f3f5 0%, #dce0e4 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f3f3f5 0%,#dce0e4 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f3f3f5 0%,#dce0e4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f5', endColorstr='#dce0e4',GradientType=0 ); /* IE6-9 */
+width: 100px;
+}
+
+.third-row{
+    background-color: #DFE3E8;
+}
+
+.footer-row{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3f3f5+0,babfc4+100 */
+background: #f3f3f5; /* Old browsers */
+background: -moz-linear-gradient(top,  #f3f3f5 0%, #babfc4 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f3f3f5 0%,#babfc4 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f3f3f5 0%,#babfc4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3f3f5', endColorstr='#babfc4',GradientType=0 ); /* IE6-9 */
+
+}
+
+.selected{
+    border: 1px solid red;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.pages{
+    text-decoration: none;
+    color: black;
+}
+
+.pages-count{
+    position: relative;
+    float:right;
+}

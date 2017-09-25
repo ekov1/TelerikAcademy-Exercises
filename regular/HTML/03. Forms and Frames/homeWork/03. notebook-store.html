@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Notebook store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .container {
+            height: 200px;
+            background: red;
+            /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(red, yellow);
+            /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(red, yellow);
+            /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(red, yellow);
+            /* For Firefox 3.6 to 15 */
+            background: linear-gradient(red, yellow);
+            /* Standard syntax (must be last) */
+
+            border-radius: 10px;
+        }
+
+        .container {
+            border-collapse: collapse;
+            border-radius: 10px;
+        }
+
+        td {
+            border-radius: 10px;
+        }
+
+        img {
+            width: 80px;
+            height: 50px;
+            float: left;
+            border-radius: 5;
+        }
+
+        .price-ranges {
+            padding: 10px;
+        }
+
+        .products tr td {
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="container" border=1>
+        <thead>
+            <tr>
+                <th colspan=2>
+                    <a href="#">Apple</a>
+                    <a href="#">Toshiba</a>
+                    <a href="#">Lenovo</a>
+                    <a href="#">Dell</a>
+                    <a href="#">Asus</a>
+                    <a href="#">Hacer</a>
+                    <a href="#">HP</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <table class="products">
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <img src="computer.png" alt="">
+                                    <p>64GB SSD 2GB DDR</p>
+                                    <p>1300 USD Intel Core i5</p>
+                                </fieldset>
+                            </td>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <img src="computer.png" alt="">
+                                    <p>64GB SSD 2GB DDR</p>
+                                    <p>1300 USD Intel Core i5</p>
+                                </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <img src="computer.png" alt="">
+                                    <p>64GB SSD 2GB DDR</p>
+                                    <p>1300 USD Intel Core i5</p>
+                                </fieldset>
+                            </td>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <img src="computer.png" alt="">
+                                    <p>64GB SSD 2GB DDR</p>
+                                    <p>1300 USD Intel Core i5</p>
+                                </fieldset>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <img src="computer.png" alt="">
+                                    <p>64GB SSD 2GB DDR</p>
+                                    <p>1300 USD Intel Core i5</p>
+                                </fieldset>
+                            </td>
+                            <td>
+                                <fieldset>
+                                    <legend>Apple MacBook Air</legend>
+                                    <img src="computer.png" alt="">
+                                    <p>64GB SSD 2GB DDR</p>
+                                    <p>1300 USD Intel Core i5</p>
+                                </fieldset>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="price-ranges">
+                    <p>Min price: 500 USD</p>
+                    <input type="range" min="0" max="150" />
+                    <p>Max price: 1500 USD</p>
+                    <input type="range" min="0" max="1500" />
+                    <p>Min RAM: 4 GB</p>
+                    <input type="range" min="0" max="4" />
+                    <p>Max RAM: 16 GB</p>
+                    <input type="range" min="0" max="16" />
+                </td>
+            </tr>
+        </tbody>
+</body>
+
+</html>
