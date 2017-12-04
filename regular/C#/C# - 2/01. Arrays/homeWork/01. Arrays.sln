@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Allocate array", "01. Allocate array\01. Allocate array.csproj", "{A7DC2BFE-DF04-4CB9-9163-92EB44639150}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Compare char arrays", "03. Compare char arrays\03. Compare char arrays.csproj", "{9983FC87-C28D-4F8A-8A76-D0CF9A6CECA8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Maximal sequence", "04. Maximal sequence\04. Maximal sequence.csproj", "{94A1774A-DA79-4DC2-ABEE-F353EE5D8C96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Maximal Increasing Sequence", "05. Maximal Increasing Sequence\05. Maximal Increasing Sequence.csproj", "{34332838-87C4-420E-A853-456D7C6CEEAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{94A1774A-DA79-4DC2-ABEE-F353EE5D8C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94A1774A-DA79-4DC2-ABEE-F353EE5D8C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94A1774A-DA79-4DC2-ABEE-F353EE5D8C96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34332838-87C4-420E-A853-456D7C6CEEAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34332838-87C4-420E-A853-456D7C6CEEAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34332838-87C4-420E-A853-456D7C6CEEAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34332838-87C4-420E-A853-456D7C6CEEAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {945DFCBD-204E-4BFF-8209-29C67B103DDF}
 	EndGlobalSection
 EndGlobal
