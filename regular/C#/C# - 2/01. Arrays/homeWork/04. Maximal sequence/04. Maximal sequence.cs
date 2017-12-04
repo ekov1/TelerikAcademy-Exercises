@@ -8,21 +8,47 @@ namespace _04.Maximal_sequence
 {
     class Program
     {
+        /// <summary>
+        /// Write a program that finds the length of the maximal sequence
+        /// of equal elements in an array of N integers.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
-            var x = new int[] { 1, 2, 3 };
-            var a = x;
+            int n;
+            int currentNum;
+            int newNum;
+            int curSeq = 1;
+            int maxSeq = 1;
 
-            Console.WriteLine(x[0]);
-            a[0] = 2;
-            Console.WriteLine(x[0]);
+            n = int.Parse(Console.ReadLine());
+            currentNum = int.Parse(Console.ReadLine());
 
-            int[] y = { 2, 3, 3, 3, 4, };
+            for (int i = 0; i < n - 1; i++)
+            {
+                newNum = int.Parse(Console.ReadLine());
+                if (currentNum == newNum)
+                {
+                    curSeq++;
+                }
+                else
+                {
+                    currentNum = newNum;
 
-            int[] z = (int[])x.Clone();
-            Console.WriteLine(z[0]);
-            z[0] = 2222;
-            Console.WriteLine(z[0]);
+                    if (curSeq > maxSeq)
+                    {
+                        maxSeq = curSeq;
+                    }
+                    curSeq = 1;
+                }
+            }
+
+            if (curSeq > maxSeq)
+            {
+                maxSeq = curSeq;
+            }
+
+            Console.WriteLine(maxSeq);
         }
     }
 }
