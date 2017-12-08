@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDB", "MovieDB\MovieDB.csproj", "{CFD0D6BF-64E7-46E2-92F0-9754A9720F67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDB.Tests", "MovieDB.Tests\MovieDB.Tests.csproj", "{A4EB804F-7A72-49A4-9D82-58E549764A87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFD0D6BF-64E7-46E2-92F0-9754A9720F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD0D6BF-64E7-46E2-92F0-9754A9720F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD0D6BF-64E7-46E2-92F0-9754A9720F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD0D6BF-64E7-46E2-92F0-9754A9720F67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4EB804F-7A72-49A4-9D82-58E549764A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4EB804F-7A72-49A4-9D82-58E549764A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4EB804F-7A72-49A4-9D82-58E549764A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4EB804F-7A72-49A4-9D82-58E549764A87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30F5E5EA-6ADF-49B5-88B7-065AC55C8CA9}
+	EndGlobalSection
+EndGlobal
