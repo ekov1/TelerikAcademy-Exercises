@@ -1,0 +1,15 @@
+@using Telerik.Sitefinity.DynamicModules.Model
+@using Telerik.Sitefinity.Model
+
+@model IQueryable<DynamicContent>
+
+<h1>
+    Projects
+</h1>
+
+<ul>
+    @foreach (var project in @Model)
+    {
+        <li>@Html.ActionLink(project.GetString("Title"), "Detail", new { urlName = project.UrlName })</li>
+    }
+</ul>

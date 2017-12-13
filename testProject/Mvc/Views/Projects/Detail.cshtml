@@ -1,0 +1,20 @@
+﻿@using Telerik.Sitefinity.DynamicModules.Model
+@using Telerik.Sitefinity.Model
+@using SitefinityWebApp.Mvc.Models;
+
+@model ProjectsModel
+
+<h1>
+   @Html.Raw(@Model.Title)
+</h1>
+
+<div>
+    @Html.ActionLink("Create a Bug", "CreateBug", new { projectUrlName = Model.UrlName})
+</div>
+
+<ul>
+    @foreach (var bug in @Model.Bugs)
+    {
+        <li>@Html.ActionLink(bug.GetString("Title"), "Bugs", new { urlName = bug.UrlName })</li>
+    }
+</ul>
