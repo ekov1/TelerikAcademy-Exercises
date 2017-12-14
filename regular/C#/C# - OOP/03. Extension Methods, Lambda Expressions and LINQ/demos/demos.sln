@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Extension-Methods", "01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. AnnonymousTypes", "02. AnnonymousTypes\02. AnnonymousTypes.csproj", "{18F5ADA6-E2AA-44AF-8672-7AA8C5D5ED6A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. DelegatesExample", "03. DelegatesExample\03. DelegatesExample.csproj", "{FFC6295B-7C28-409D-BA4A-88F232DAC0C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{18F5ADA6-E2AA-44AF-8672-7AA8C5D5ED6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18F5ADA6-E2AA-44AF-8672-7AA8C5D5ED6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18F5ADA6-E2AA-44AF-8672-7AA8C5D5ED6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC6295B-7C28-409D-BA4A-88F232DAC0C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC6295B-7C28-409D-BA4A-88F232DAC0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC6295B-7C28-409D-BA4A-88F232DAC0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC6295B-7C28-409D-BA4A-88F232DAC0C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
