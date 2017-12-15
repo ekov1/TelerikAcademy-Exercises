@@ -1,0 +1,13 @@
+@using Telerik.Sitefinity.DynamicModules.Model
+@using Telerik.Sitefinity.Model
+
+
+@model SitefinityWebApp.Mvc.Models.DisplayModel
+
+<h1>
+    @foreach (var item in Model.news)
+    {
+        @Html.Raw(item);
+    }
+    
+</h1>
