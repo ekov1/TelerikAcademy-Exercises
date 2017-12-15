@@ -7,7 +7,7 @@
 <h1>
     @foreach (var item in Model.news)
     {
-        @Html.Raw(item);
+        @Html.DisplayText(item.Content );
     }
     
 </h1>

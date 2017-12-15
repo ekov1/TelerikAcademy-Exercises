@@ -1088,6 +1088,7 @@
     <Compile Include="Mvc\Controllers\ProjectsController.cs" />
     <Compile Include="Mvc\Models\BugsModel.cs" />
     <Compile Include="Mvc\Models\DisplayModel.cs" />
+    <Compile Include="Mvc\Models\NewsItemModel.cs" />
     <Compile Include="Mvc\Models\ProjectsModel.cs" />
     <Compile Include="Mvc\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

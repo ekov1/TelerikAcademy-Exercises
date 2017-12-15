@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using Telerik.Sitefinity.News.Model;
 
 namespace SitefinityWebApp.Mvc.Models
 {
@@ -11,6 +13,6 @@ namespace SitefinityWebApp.Mvc.Models
         /// </summary>
         public string Message { get; set; }
 
-        public IEnumerable news { get; set; }
+        public List<NewsItemModel> news { get; set; }
     }
 }
